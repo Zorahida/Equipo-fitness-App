@@ -1,0 +1,14 @@
+.submit{
+    padding: 10px;
+    font-size: 12px;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+    outline: none;
+    background: rgb(45, 30, 214) ;
+    color: white;
+    text-transform: capitalize;
+    
+
+}
