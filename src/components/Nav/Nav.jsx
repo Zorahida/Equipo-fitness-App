@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ user, logoutUser }) => {
   return (
     <nav>
       <div className="container-nav">
@@ -15,8 +15,12 @@ const NavBar = () => {
             <Link to="/register">Registro</Link>
           </li>
           <li>
-            <Link to="/login">Inicio de sesión</Link>
-          </li>
+          {user ? (
+            <button onClick={logoutUser}>Cerrar sesión</button>
+          ) : (
+            <Link to="/login">Iniciar sesión</Link>
+          )}
+        </li>
           <li>
             <Link to="/profile">Área personal</Link>
           </li>
