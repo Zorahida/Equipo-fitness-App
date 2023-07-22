@@ -17,11 +17,11 @@ function Contact() {
             Por teléfono
           </label>
           <label>
-            <input type="radio" name="myRadio" value="email" />
+            <input type="radio" name="btnRadio" value="email" />
             Por email
           </label>
           <label>
-            <input type="radio" name="myRadio" value="none" />
+            <input type="radio" name="btnRadio" value="none" />
             No quiero que me contacten
           </label>
         </p>
