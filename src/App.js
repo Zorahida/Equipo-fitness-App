@@ -52,7 +52,7 @@ function App() {
         <NavBar user={user} logoutUser={logoutUser}/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/training" element={<TrainingList/>} />
+          <Route path="/training" element={<TrainingList trainings={trainings}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
           <Route path="/profile" element={<PersonalArea />} />
