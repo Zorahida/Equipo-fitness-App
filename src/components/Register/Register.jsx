@@ -50,7 +50,7 @@ const Register = () => {
             value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/ ,
         }
       })}/>
-      {errors.Nombre && <p>{errors.Nombre.message}</p>}
+      {errors.Contraseña && <p>{errors.Contraseña.message}</p>}
       
       <button className='submit'>Registrar</button>
       
