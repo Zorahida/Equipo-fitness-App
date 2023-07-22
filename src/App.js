@@ -20,9 +20,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
+          {/*<Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<PersonalArea />} />
+          <Route path="/training" element={<TrainingList />}/> ----> Pendiente de crear el componente*/}
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
@@ -31,7 +32,6 @@ function App() {
     </>
   );
 }
-/* <Route path="/training" element={<TrainingList />}/> ----> Pendiente de crear el componente*/
 
 
 export default App;
