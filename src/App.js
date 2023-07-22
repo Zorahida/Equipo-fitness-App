@@ -44,11 +44,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        
-      </div>
-
-      <div className="App-header">
+      <div>
         <NavBar user={user} logoutUser={logoutUser}/>
         <Routes>
           <Route path="/" element={<Home />} />

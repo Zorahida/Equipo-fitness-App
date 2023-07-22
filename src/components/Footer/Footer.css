@@ -1,0 +1,39 @@
+.footer_nav{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+}
+.footer_list{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.footer_list_element{
+    text-decoration: none;
+    color: white;
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+
+
+}
+.logout{
+    list-style: none;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+}
+.footer_img{
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+}
