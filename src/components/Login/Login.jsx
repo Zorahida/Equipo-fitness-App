@@ -1,3 +1,4 @@
+import './login.css'
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const Login = ({ loginUser, loginError }) => {
     <>
       <div className="container-login">
         <div className="body-login">
-          <form onSubmit={submitForm}>
+          <form className="form-login" onSubmit={submitForm}>
             <label htmlFor="email">
               Email
               <input
@@ -51,9 +52,7 @@ const Login = ({ loginUser, loginError }) => {
                 value={formData.password}
               />
             </label>
-            <div>
-            <button type="submit">Iniciar sesión</button>
-            </div>
+            <button className="submit-login" type="submit">Iniciar sesión</button>
             {loginError ? (
               <div style={{ color: "red" }}>{loginError}</div>
             ) : null}
