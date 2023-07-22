@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Footer.css";
 
 // const logo = require("")
 const social1 = require("../../assets/images/instagram.png")
@@ -8,38 +9,38 @@ const social3 = require("../../assets/images/twitter.png")
 const Footer = () => {
   return (
     <nav className="footer_nav">
-      <ul>
-        <li>
+      <ul className="footer_list">
+        {/* <li className="footer_list_element">
           <Link to="/">
-          {/* <img className="footer_img" src={logo} alt="" /> */}
+          <img className="footer_img" src={logo} alt="" />
           </Link>
+        </li> */}
+        <li>
+          <Link className="footer_list_element" to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="/">Inicio</Link>
+          <Link className="footer_list_element" to="/training">Listado de entrenamientos</Link>
         </li>
         <li>
-          <Link to="/training">Listado de entrenamientos</Link>
+          <Link className="footer_list_element" to="/register">Registro</Link>
         </li>
         <li>
-          <Link to="/register">Registro</Link>
+          <Link className="footer_list_element" to="/login">Iniciar sesión</Link>
         </li>
         <li>
-          <Link to="/login">Iniciar sesión</Link>
+          <Link className="footer_list_element" to="/profile">Área personal</Link>
         </li>
         <li>
-          <Link to="/profile">Área personal</Link>
+          <Link className="footer_list_element" to="/users">Lista de usuarios</Link>
         </li>
         <li>
-          <Link to="/users">Lista de usuarios</Link>
+          <Link className="footer_list_element" to="/contact">Contacto</Link>
         </li>
         <li>
-          <Link to="/contact">Contacto</Link>
-        </li>
-        <li>
-          <Link to="/about">Acerca de nosotros</Link>
+          <Link className="footer_list_element" to="/about">Acerca de nosotros</Link>
          </li>
         <li>
-          <button className="logout">Logout</button>
+          <button className="logout">Cerrar sesión</button>
         </li>
       </ul>
       <a href="#"><img className="footer_img" src={social1} alt=""></img></a>
