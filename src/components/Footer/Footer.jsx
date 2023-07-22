@@ -18,25 +18,25 @@ const Footer = () => {
           <Link to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="/exerciseList">Ejercicios por grupo muscular</Link>
+          <Link to="/training">Listado de entrenamientos</Link>
         </li>
         <li>
-          <Link to="/registro">Registro</Link>
+          <Link to="/register">Registro</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login">Iniciar sesión</Link>
         </li>
         <li>
           <Link to="/profile">Área personal</Link>
         </li>
         <li>
-          <Link to="/userList">Lista de usuarios</Link>
+          <Link to="/users">Lista de usuarios</Link>
         </li>
         <li>
           <Link to="/contact">Contacto</Link>
         </li>
         <li>
-          <Link to="/about">Sobre nosotros</Link>
+          <Link to="/about">Acerca de nosotros</Link>
          </li>
         <li>
           <button className="logout">Logout</button>

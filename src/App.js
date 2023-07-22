@@ -11,6 +11,9 @@ import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
+import TrainingList from "./components/TrainingList/TrainingList";
+import PersonalArea from "./components/PersonalArea/PersonalArea";
+import UserList from "./components/UserList/UserList";
 
 function App() {
 
@@ -49,15 +52,16 @@ function App() {
         <NavBar user={user} logoutUser={logoutUser}/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/training" element={<TrainingList/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
-          {/*<Route path="/profile" element={<PersonalArea />} />
-          <Route path="/training" element={<TrainingList />}/> ----> Pendiente de crear el componente*/}
+          <Route path="/profile" element={<PersonalArea />} />
+          <Route path="/users" element={<UserList />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
-        <Footer/>
         </Routes>
+        <Footer/>
       </div>
     </>
   );
