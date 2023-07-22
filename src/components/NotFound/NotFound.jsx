@@ -1,3 +1,4 @@
+import "./notfound.css";
 import img from "../../assets/images/notfound.jpg.jpg";
 
 const NotFound = () => {
