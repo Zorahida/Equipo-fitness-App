@@ -11,7 +11,7 @@ const Footer = () => {
       <ul>
         <li>
           <Link to="/">
-          <img className="footer_img" src={logo} alt="" />
+          {/* <img className="footer_img" src={logo} alt="" /> */}
           </Link>
         </li>
         <li>
