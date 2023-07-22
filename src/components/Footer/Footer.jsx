@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <nav className="footer_nav">
       <ul>
-        {/* <li>
+        <li>
           <Link to="/">
           <img className="footer_img" src={logo} alt="" />
           </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
         </li>
         <li>
           <Link to="/about">Sobre nosotros</Link>
-         </li> */}
+         </li>
         <li>
           <button className="logout">Logout</button>
         </li>
