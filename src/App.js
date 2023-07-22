@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound/NotFound";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
+        <Footer/>
         </Routes>
       </div>
     </>
