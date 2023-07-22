@@ -1,13 +1,30 @@
-function Contact() {
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+//import envioCorreo from "archivo enviarCorreo"
+
+
+const Contact =() => {
+  const{handleSubmit, getValues} = useForm();
+  
+  const onSubmit = () => {
+    const data = getValues();
+    console.log(data);
+    //enviCorreo(data);
+    //Aqui podemos enviar los datos a una base de datos o email
+  }
+
+  const 
+  
   return (
     <>
       <header>CONTACTA CON NOSOTROS</header>
-      <body>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label>
-          Nombre: <input name="nameInput" />
+          Nombre: <input name="Input" />
           Apellidos: <input name="surnameInput" />
           Email: <input name="mailInput" />
-          Teléfono: <input name="phoneInput" />
+          Confirmar email: <input name="mailInput" />
+          Teléfono: <input input name="phoneInput" />
         </label>
         <hr />
         <p>
@@ -29,8 +46,9 @@ function Contact() {
           Acepto los términos y condiciones:{" "}
           <input type="checkbox" name="terminosCheckbox" />
         </label>
+        <button type="submit" value="Submit" >Enviar</button>
         <hr />
-      </body>
+      </form>
     </>
   );
 }
