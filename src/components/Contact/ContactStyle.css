@@ -1,72 +1,72 @@
 .Title{
     background-color: rgb(174, 165, 165);
+    color: rgb(47, 58, 58);
     min-height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     font-size: calc(10px + 2vmin);
 }
-.Form{
-    position: absolute;
+.form{
+    background-color: #ecedf1;
+    text-align: center;
     width: 100%;
-    min-height: 100vh;
-    background-color: lightgray;
-    overflow: hidden;
+    padding: 15px;
+}
+.main-container{
+  width: 90vw;
+  max-width: 740px;
+  height: 70vh;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 55px;
+  background: #cdc2c2;
+  display: flex;
+  flex-wrap:nowrap;
+  flex-direction: column;
+}
+.container-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 2rem;
+}
+::placeholder{
+    color: rgb(50, 163, 163);
+}
+.container-radios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 2rem;
 
-.Form::before{
-    position: absolute;
-    width: 2000px;
-    height: 2000px;
-    border-radius: 50%;
-    background: linear-gradient(-45deg, #4481eb, #04befe);
-    top: -10%;
-    right: 48%;
-    transform: translateY(-50%);
-    z-index: 6;
-    transition: 1.8s ease-in-out;
-}
-}
-.input-details{
-    max-width: 380px;
-    width: 100%;
-    height: 55px;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    border-radius: 55px;
-    display: grid;
-    padding: 5px;
-}
-
-.input-radio{
-    max-width: 380px;
-    width: 100%;
-    height: 55px;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    border-radius: 55px;
-    display: grid;
-    padding: 5px;
 }
 
-.input-terms{
-    max-width: 380px;
-    width: 100%;
-    height: 55px;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    border-radius: 55px;
-    display: grid;
-    padding: 5px;
-}
-
-.input-details::placeholder{
-    color: #aaa;
-    font-weight: 500;
-
+.container-terms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 2rem;
 }
 
 .btn{
+    width: 150px;
+    height: 49px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #0e3881;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px;
+    transition: .8s;
+}
+.btn:disabled{
     width: 150px;
     height: 49px;
     border: none;
@@ -78,9 +78,9 @@
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
-    transition: .5s;
+    transition: .8s;
 }
 
 .btn:hover{
-    background-color: #4d8ae2;
+    background-color: #576b87;
 }

@@ -1,5 +1,6 @@
 //Aqúi importo el Nav
 //Importo los styles
+
 import pic from "../../assets/images/450_1000.jpg"
 import cubofit from "../../assets/images/gimnasios_post_covid.jpg"
 
@@ -29,7 +30,7 @@ function About() {
         </main>
     </>
     )
-    }
+    }   
     
     export default About;
 

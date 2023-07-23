@@ -1,5 +1,7 @@
 import { useState } from "react";
+import {useForm} from "react-hook-form";
 import "./ContactStyle.css";
+import "./TerminosyCondiciones";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -20,29 +22,37 @@ function Contact() {
   const submitForm = (ev) => {
     ev.preventDefault();
   };
-  if (isFormValid) {
-    // Aquí puedes enviar los datos o hacer lo que necesites con ellos
-    console.log("Formulario enviado!");
-  } else {
-    console.log(
-      "Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar."
-    );
+
+  const messages = {
+    req: "Este campo es obligatorio",
+    mail: "Debes introducir una dirección correcta",
+    phone: "Debes introducir un número correcto"
+  };
 
     const handlerReset = () => {
       setName("");
       setSurname("");
       setEmail("");
       setPhone("");
+      setContactMethod("");
       setTermsAccepted(false);
     };
 
+    if (isFormValid) {
+      console.log("Formulario enviado!");
+    } else {
+      alert(
+        "Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar."
+      );
+ }
     return (
       <>
         <div className="Title">
           <h1>CONTACTA CON NOSOTROS</h1>
         </div>
-        <form className="Form" onSubmit={submitForm}>
-          <div className="input-details">
+        <form className="form" onSubmit={submitForm}>
+        <div className="main-container">
+          <div className="container-details">
             <label>
               Nombre:{" "}
               <input
@@ -50,7 +60,8 @@ function Contact() {
                 name="Nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                required
+                placeholder="Luisa"
+                {required: messages.req}
               />
               Apellidos:{" "}
               <input
@@ -58,6 +69,7 @@ function Contact() {
                 name="Apellidos"
                 value={surname}
                 onChange={(e) => setSurname(e.target.value)}
+                placeholder="Madrigal"
                 required
               />
               Email:{" "}
@@ -66,6 +78,7 @@ function Contact() {
                 name="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="Luisa@upgradehub.com"
                 required
               />
               Teléfono:{" "}
@@ -74,19 +87,19 @@ function Contact() {
                 name="Teléfono"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                placeholder="600606060"
                 required
               />
             </label>
           </div>
 
-          <div className="Input-radio">
-            <p>Como quiero que me contacten:</p>
+          <div className="container-radios">
+            <h3>Como quiero que me contacten:</h3>
             <label>
               <input
                 type="radio"
                 name="btnRadio"
                 value="teléfono"
-                checked
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
@@ -97,7 +110,6 @@ function Contact() {
                 type="radio"
                 name="btnRadio"
                 value="email"
-                checked
                 onChange={() => setContactMethod("email")}
                 required
               />
@@ -108,7 +120,6 @@ function Contact() {
                 type="radio"
                 name="btnRadio"
                 value="none"
-                checked
                 onChange={() => setContactMethod("none")}
                 required
               />
@@ -116,9 +127,10 @@ function Contact() {
             </label>
           </div>
 
-          <div className="Input-terms">
+          <div className="container-terms">
             <label>
-              Acepto los términos y condiciones:{" "}
+            <a href="https://www.upgrade-hub.com/privacidad/">Acepto los términos y condiciones{""}</a> 
+
               <input
                 type="checkbox"
                 name="terminosCheckbox"
@@ -134,15 +146,16 @@ function Contact() {
               className="btn"
               type="submit"
               disabled={!isFormValid && !termsAccepted}
-              onClick={handlerReset}
-            >
+              onClick={()=> alert('Enviado')}
+              onMouseLeave={handlerReset}>
               Enviar
             </button>
           </div>
+        </div>
         </form>
       </>
     );
   }
-}
+
 
 export default Contact;
