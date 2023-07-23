@@ -4,30 +4,26 @@ import "./ContactStyle.css";
 import "./TerminosyCondiciones";
 
 function Contact() {
+
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [contactMethod, setContactMethod] = useState(""); // 'teléfono', 'email', 'none'
+  const [contactMethod, setContactMethod] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
-  const isFormValid =
-    name !== "" &&
-    surname !== "" &&
-    email !== "" &&
-    phone !== "" &&
-    contactMethod !== "" &&
-    termsAccepted;
-
-  const submitForm = (ev) => {
-    ev.preventDefault();
-  };
 
   const messages = {
-    req: "Este campo es obligatorio",
-    mail: "Debes introducir una dirección correcta",
+    name: "Debes introducir un nombre correcto",
+    email: "Debes introducir una dirección correcta",
     phone: "Debes introducir un número correcto"
   };
+
+  const patterns = {
+    name: /^[A-Za-z]+$/i,
+    email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    phone: /^[+0-9]+$/i
+    };
 
     const handlerReset = () => {
       setName("");
@@ -36,15 +32,29 @@ function Contact() {
       setPhone("");
       setContactMethod("");
       setTermsAccepted(false);
+
     };
 
+    const isFormValid =
+    name !== "" &&
+    surname !== "" &&
+    email !== "" &&
+    phone !== "" &&
+    contactMethod !== "" &&
+    termsAccepted &&
+    patterns.name.test(name) &&
+  patterns.email.test(email) &&
+  patterns.phone.test(phone);
+ 
+  const submitForm = (ev) => {
+    ev.preventDefault();
     if (isFormValid) {
-      console.log("Formulario enviado!");
+      alert("Formulario enviado!");
     } else {
-      alert(
-        "Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar."
-      );
- }
+      alert("Por favor, completa todos los campos correctamente antes de enviar.");
+    }
+ };
+
     return (
       <>
         <div className="Title">
@@ -61,8 +71,11 @@ function Contact() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Luisa"
-                {required: messages.req}
-              />
+                required
+                />
+                {name !== "" && !patterns.name.test(name) && (
+              <span style={{ color: "red" }}>{messages.name}</span>)}
+              
               Apellidos:{" "}
               <input
                 type="text"
@@ -72,6 +85,10 @@ function Contact() {
                 placeholder="Madrigal"
                 required
               />
+            {surname !== "" && !patterns.name.test(surname) && (
+              <span style={{ color: "red" }}>{messages.name}</span>
+            )}
+
               Email:{" "}
               <input
                 type="email"
@@ -81,6 +98,10 @@ function Contact() {
                 placeholder="Luisa@upgradehub.com"
                 required
               />
+              {email !== "" && !patterns.email.test(email) && (
+              <span style={{ color: "red" }}>{messages.email}</span>
+            )}
+
               Teléfono:{" "}
               <input
                 type="tel"
@@ -90,6 +111,9 @@ function Contact() {
                 placeholder="600606060"
                 required
               />
+              {phone !== "" && !patterns.phone.test(phone) && (
+              <span style={{ color: "red" }}>{messages.phone}</span>
+            )}
             </label>
           </div>
 
@@ -103,7 +127,7 @@ function Contact() {
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
-              Por teléfono
+             Vía telefónica
             </label>
             <label>
               <input
@@ -113,7 +137,7 @@ function Contact() {
                 onChange={() => setContactMethod("email")}
                 required
               />
-              Por email
+              Vía correo electrónico
             </label>
             <label>
               <input
@@ -146,9 +170,10 @@ function Contact() {
               className="btn"
               type="submit"
               disabled={!isFormValid && !termsAccepted}
-              onClick={()=> alert('Enviado')}
-              onMouseLeave={handlerReset}>
-              Enviar
+              onClick={()=> isFormValid ?
+      alert("Formulario enviado!") : alert("Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar.")}
+              onMouseUp={handlerReset}>
+             Enviar
             </button>
           </div>
         </div>
