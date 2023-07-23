@@ -2,8 +2,11 @@ import { useState } from "react";
 import {useForm} from "react-hook-form";
 import "./ContactStyle.css";
 import "./TerminosyCondiciones";
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
 
-function Contact() {
+
+function Contact ()  {
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -48,26 +51,30 @@ function Contact() {
  
   const submitForm = (ev) => {
     ev.preventDefault();
-    if (isFormValid) {
       alert("Formulario enviado!");
+      emailjs.sendForm('service_9ug1lbk', 'template_g5e7uie', form.current, 'bpAtvu5HoUkk88R-t')
+      .then((result) => {
+        if (isFormValid) {
     } else {
       alert("Por favor, completa todos los campos correctamente antes de enviar.");
     }
- };
+ });
+}
 
     return (
+
       <>
         <div className="Title">
           <h1>CONTACTA CON NOSOTROS</h1>
         </div>
-        <form className="form" onSubmit={submitForm}>
+        <form className="form" ref={form} onSubmit={submitForm}>
         <div className="main-container">
           <div className="container-details">
             <label>
               Nombre:{" "}
               <input
                 type="text"
-                name="Nombre"
+                name="user_name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Luisa"
@@ -79,7 +86,7 @@ function Contact() {
               Apellidos:{" "}
               <input
                 type="text"
-                name="Apellidos"
+                name="user_name"
                 value={surname}
                 onChange={(e) => setSurname(e.target.value)}
                 placeholder="Madrigal"
@@ -92,7 +99,7 @@ function Contact() {
               Email:{" "}
               <input
                 type="email"
-                name="Email"
+                name="user_email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Luisa@upgradehub.com"
@@ -115,6 +122,8 @@ function Contact() {
               <span style={{ color: "red" }}>{messages.phone}</span>
             )}
             </label>
+            <label>Message</label>
+      <textarea name="message" />
           </div>
 
           <div className="container-radios">
@@ -169,6 +178,7 @@ function Contact() {
             <button
               className="btn"
               type="submit"
+              value="send"
               disabled={!isFormValid && !termsAccepted}
               onClick={()=> isFormValid ?
       alert("Formulario enviado!") : alert("Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar.")}
