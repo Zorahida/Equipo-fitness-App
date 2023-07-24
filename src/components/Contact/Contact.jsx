@@ -77,6 +77,7 @@ function Contact ()  {
                 />
                 {name !== "" && !patterns.name.test(name) && (
               <span style={{ color: "red" }}>{messages.name}</span>)}
+              <br></br>
               
               Apellidos:{" "}
               <input
@@ -91,6 +92,7 @@ function Contact ()  {
               <span style={{ color: "red" }}>{messages.name}</span>
             )}
 
+            <br></br>
               Email:{" "}
               <input
                 type="email"
@@ -103,7 +105,8 @@ function Contact ()  {
               {email !== "" && !patterns.email.test(email) && (
               <span style={{ color: "red" }}>{messages.email}</span>
             )}
-
+            
+            <br></br>
               Teléfono:{" "}
               <input
                 type="tel"
@@ -117,8 +120,13 @@ function Contact ()  {
               <span style={{ color: "red" }}>{messages.phone}</span>
             )}
             </label>
-            <label>Escriba su mensaje</label>
-      <textarea maxlength="300" name="message" />
+            <br></br>
+      <textarea 
+      name="mensaje" 
+      rows="10" 
+      cols="40"
+      placeholder="Escriba aquí su mensaje"
+      ></textarea>
           </div>
 
           <div className="container-radios">
