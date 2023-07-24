@@ -1,6 +1,6 @@
 import './login.css'
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 
 const initial_state = {
@@ -27,36 +27,44 @@ const Login = ({ loginUser, loginError }) => {
 
   return (
     <>
+    <div className='title-login'>
+      <h1>Iniciar sesión</h1>
+    </div>
       <div className="container-login">
         <div className="body-login">
           <form className="form-login" onSubmit={submitForm}>
             <label htmlFor="email">
-              Email
+              {/*Email*/}
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Email"
+                placeholder="Email*"
                 onChange={changeInput}
                 value={formData.email}
               />
             </label>
             <label htmlFor="pass">
-              Contraseña
+              {/*Contraseña*/}
               <input
                 type="password"
                 name="password"
                 id="pass"
-                placeholder="Contraseña"
+                placeholder="Contraseña*"
                 onChange={changeInput}
                 value={formData.password}
               />
             </label>
             <button className="submit-login" type="submit">Iniciar sesión</button>
+            <div className='error-login'>
             {loginError ? (
-              <div style={{ color: "red" }}>{loginError}</div>
+              <p style={{ color: "red" }}>{loginError}</p>
             ) : null}
+            </div>          
           </form>
+          <div className='redirect-login'>
+          <Link to="/register">¿Aún no tienes cuenta? Regístrate</Link>
+                </div>
         </div>
       </div>
     </>
