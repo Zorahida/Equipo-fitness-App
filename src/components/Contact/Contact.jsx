@@ -117,8 +117,8 @@ function Contact ()  {
               <span style={{ color: "red" }}>{messages.phone}</span>
             )}
             </label>
-            <label>Message</label>
-      <textarea name="message" />
+            <label>Escriba su mensaje</label>
+      <textarea maxlength="300" name="message" />
           </div>
 
           <div className="container-radios">
