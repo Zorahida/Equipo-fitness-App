@@ -1,0 +1,45 @@
+.section{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 5px;
+}
+
+.section_training_card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    margin: 30px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px black;
+}
+
+.span{
+    margin-bottom: 20px;
+    border: 0.5px solid black;
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.tick{
+    width: 10px;
+    margin-right: 10px;
+}
+
+.video{
+    margin: 20px 0;
+}
+
+.description{
+    color:chocolate;
+    margin:10px 0;
+}
+
+.element{
+    margin: 5px 0;
+}
