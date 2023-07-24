@@ -2,8 +2,6 @@ import { useState } from "react";
 import {useForm} from "react-hook-form";
 import "./ContactStyle.css";
 import "./TerminosyCondiciones";
-import emailjs from '@emailjs/browser';
-import React, { useRef } from 'react';
 
 
 function Contact ()  {
@@ -51,15 +49,12 @@ function Contact ()  {
  
   const submitForm = (ev) => {
     ev.preventDefault();
-      alert("Formulario enviado!");
-      emailjs.sendForm('service_9ug1lbk', 'template_g5e7uie', form.current, 'bpAtvu5HoUkk88R-t')
-      .then((result) => {
         if (isFormValid) {
     } else {
       alert("Por favor, completa todos los campos correctamente antes de enviar.");
     }
- });
-}
+ };
+
 
     return (
 
@@ -67,14 +62,14 @@ function Contact ()  {
         <div className="Title">
           <h1>CONTACTA CON NOSOTROS</h1>
         </div>
-        <form className="form" ref={form} onSubmit={submitForm}>
+        <form className="form" onSubmit={submitForm}>
         <div className="main-container">
           <div className="container-details">
             <label>
               Nombre:{" "}
               <input
                 type="text"
-                name="user_name"
+                name="nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Luisa"
@@ -86,7 +81,7 @@ function Contact ()  {
               Apellidos:{" "}
               <input
                 type="text"
-                name="user_name"
+                name="nombre"
                 value={surname}
                 onChange={(e) => setSurname(e.target.value)}
                 placeholder="Madrigal"
@@ -99,7 +94,7 @@ function Contact ()  {
               Email:{" "}
               <input
                 type="email"
-                name="user_email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Luisa@upgradehub.com"
