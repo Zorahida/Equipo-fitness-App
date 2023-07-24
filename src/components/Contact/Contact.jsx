@@ -2,9 +2,8 @@ import { useState } from "react";
 import {useForm} from "react-hook-form";
 import "./ContactStyle.css";
 import "./TerminosyCondiciones";
-import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
 import React, { useRef } from 'react';
-
 
 function Contact ()  {
 
