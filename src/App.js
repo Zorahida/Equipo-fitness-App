@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import userList from "../src/data/userList.json";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavBar from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
@@ -21,6 +21,15 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [loginError, setLoginError] = useState("");
+  const [trainings, setTrainings] = useState([]);
+
+  useEffect(()=>{
+    fetch("https://proyect-back-final1.vercel.app/fitnessBase")
+    .then((response) => response.json())
+    .then((data) => {
+      setTrainings(data);
+    })
+  }, [])
 
   const loginUser = (formData, prevRoute) => {
     const existsUser = userList.users.find(
@@ -48,7 +57,7 @@ function App() {
         <NavBar user={user} logoutUser={logoutUser}/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/training" element={<TrainingList/>} />
+          <Route path="/training" element={<TrainingList trainings={trainings}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
           <Route path="/profile" element={<PersonalArea />} />
