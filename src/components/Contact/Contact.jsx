@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./ContactStyle.css";
 import "../TerminosyCondiciones/TerminosyCondiciones";
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
 
-const Button = styled.button`
-  color: turquoise;
-`
+// const Button = styled.button`
+//   color: turquoise;
+// `
 
 
 
@@ -170,10 +170,8 @@ function Contact() {
                 Acepto los términos y condiciones{""}
               </a>
 
-             
-`
-
-<Button>This my button component.</Button>
+{/*
+<Button>This my button component.</Button> */}
 
 
               <input
