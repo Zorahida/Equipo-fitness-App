@@ -1,9 +1,9 @@
 import "./styles/App.css";
 import userList from "../src/data/userList.json";
 import { useNavigate } from "react-router-dom";
-import { Component, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 import NavBar from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
@@ -17,7 +17,7 @@ import Footer from "./components/Footer/Footer";
 import TrainingList from "./components/TrainingList/TrainingList";
 import PersonalArea from "./components/PersonalArea/PersonalArea";
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import UserList from "./components/UserList/UserList";
 
 
 
@@ -72,7 +72,7 @@ function App () {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
           <Route path="/profile" element={<PersonalArea />} />
-          <Route path="/userList" element={<userList />} />
+          <Route path="/userList" element={<UserList />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/terminosycondiciones" element={<TerminosyCondiciones />} />
