@@ -1,0 +1,12 @@
+.light {
+    background-color: white;
+    color: rgb(76, 249, 131);
+    width: 100%;
+  }
+  
+  .dark {
+    background-color: black;
+    color: white;
+    width: 100%;
+  }
+  
