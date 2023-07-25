@@ -1,50 +1,41 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import NotFound from "../NotFound/NotFound";
 
-function UserList () {
-
-
-  const[listUser, setUser] = useState([]);
+function UserList() {
+  const [listUser, setUser] = useState([]);
+  const [error, setError] = useState(false);
 
   const getAllUser = async () => {
+    try {
+      const response = await axios.get(
+        `https://proyect-back-final1.vercel.app/usuariosBase`
+      );
 
-  const response = await axios.get(
-          `https://proyect-back-final1.vercel.app/usuariosBase`);
-
-<<<<<<< HEAD:src/components/UserList/UserList.jsx
-      setUser(response.data)
-          
-=======
-  const user = response.data.results()
-      setUser(user);
->>>>>>> userList:src/components/UserList/UserList.js
-      };
-
-      useEffect(() => {
-          getAllUser();
-      }, []);
-
-  const renderUser = () => {
-<<<<<<< HEAD:src/components/UserList/UserList.jsx
-      return listUser.map((usuario) => (
-         <div key= {usuario._id}>
-           <h4> {usuario.username}</h4>
-=======
-      return listUser.map((user) => (
-         <div key= {user._id}>
-           <h4> {...user}</h4>
->>>>>>> userList:src/components/UserList/UserList.js
-           <ul>
-           <li>{usuario._id}</li>
-           <li>{usuario.nombre}</li>
-          </ul>
-        
-      </div>
-      ));
+      setUser(response.data);
+    } catch (eror) {
+      setError(true);
+    }
   };
 
-   return <div>{renderUser()}</div>
-};
+  useEffect(() => {
+    getAllUser();
+  }, []);
+
+  const renderUser = () => {
+    return listUser.map((usuario) => (
+      <div key={usuario._id}>
+        <h4> {usuario.username}</h4>
+        <ul>
+          <li>{usuario._id}</li>
+          <li>{usuario.nombre}</li>
+        </ul>
+      </div>
+    ));
+  };
+
+  return <div>{error ? <NotFound /> : <div>{renderUser()}</div>}</div>;
+}
 
 export default UserList;
