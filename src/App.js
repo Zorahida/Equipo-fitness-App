@@ -23,7 +23,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [loginError, setLoginError] = useState("");
   const [trainings, setTrainings] = useState([]);
-  const [theme, setTheme] = useState(false)
+  const [theme, setTheme] = useState(false);
 
   useEffect(() => {
     fetch("https://proyect-back-final1.vercel.app/fitnessBase")
@@ -58,49 +58,49 @@ function App() {
   };
 
   return (
-    <>
+    <div className={theme ? "white" : "black"}>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
-
-      <div className={theme ? "white" : "black"}>
-        <form className="theme" action="">
-          {theme === "white" ? <label>Pulsa para cambiar a modo nocturno</label> : <label>Pulsa para cambiar a modo diurno</label>}
+      <color.Provider value={theme}>
+        <NavBar user={user} logoutUser={logoutUser} />
+        <div class="switch-button theme">
           <input
             type="checkbox"
-            name="colorTheme"
             onChange={handleClick}
             checked={theme}
+            name="switch-button"
+            id="switch-label"
+            class="switch-button__checkbox"
+          ></input>
+          <label for="switch-label" class="switch-button__label"></label>
+          {theme ? <label class="label">Modo noche</label> : <label class="label">Modo dia</label>}
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/training"
+            element={<TrainingList trainings={trainings} />}
           />
-        </form>
-        <color.Provider value={theme}>
-          <NavBar user={user} logoutUser={logoutUser} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/training"
-              element={<TrainingList trainings={trainings} />}
-            />
-            <Route path="/register" element={<Register />} />
-            <Route
-              path="/login"
-              element={<Login loginUser={loginUser} loginError={loginError} />}
-            />
-            <Route path="/profile" element={<PersonalArea />} />
-            <Route path="/userList" element={<userList />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/terminosycondiciones"
-              element={<TerminosyCondiciones />}
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </color.Provider>
-      </div>
-    </>
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/login"
+            element={<Login loginUser={loginUser} loginError={loginError} />}
+          />
+          <Route path="/profile" element={<PersonalArea />} />
+          <Route path="/userList" element={<userList />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/terminosycondiciones"
+            element={<TerminosyCondiciones />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </color.Provider>
+    </div>
   );
 }
 

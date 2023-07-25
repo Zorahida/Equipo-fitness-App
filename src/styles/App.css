@@ -1,22 +1,78 @@
 .white {
     background-color: white;
-    min-height: 100vh;
-    display: flex;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: #282c34;
     letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
   }
   .black {
     background-color: #545454;
-    min-height: 100vh;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
     letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
   }
+
+  .theme{
+    display: flex;
+    font-size: small;
+    padding: 10px;
+    border-radius: 20px;
+    width: 150px;
+
+  }
+
+  .checkbox{
+    margin: 5px;
+  }
+
+  :root {
+    --color-green: #000630;
+    --color-red: #E2E2E2;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 35px;
+    height: 20px;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(0.8rem);
+}
+
+.label{
+    margin-bottom: 5px;
+}
