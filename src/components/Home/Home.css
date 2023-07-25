@@ -19,7 +19,7 @@ h1{
     margin: 40px 0;
 }
 
-.App{
+.dark {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

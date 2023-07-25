@@ -1,12 +1,13 @@
 import "./styles/App.css";
-import userList from "../src/data/userList.json";
+import "./styles/Toggle.css";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { contextUse, color } from "./components/UseContext/UseContext";
+import Toggle from "react-toggle";
 import NavBar from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
-import Login from "./components/Login/Login";
-//import PersonalArea from "./components/PersonalArea/PersonalArea";
+//import Login from "./components/Login/Login";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound/NotFound";
@@ -19,8 +20,9 @@ function App() {
 
   const navigate = useNavigate();
 
+  const [theme, setTheme] = useState(false);
   const [user, setUser] = useState(null);
-  const [loginError, setLoginError] = useState("");
+ // const [loginError, setLoginError] = useState("");
   const [trainings, setTrainings] = useState([]);
 
   useEffect(()=>{
@@ -31,20 +33,38 @@ function App() {
     })
   }, [])
 
-  const loginUser = (formData, prevRoute) => {
-    const existsUser = userList.users.find(
-      (user) =>
-        user.email === formData.email && user.password === formData.password
+
+/*const loginUser = (formData, prevRoute) => {
+    try {
+    fetch("https://proyect-back-final1.vercel.app/usuariosBase", {method: "POST", body: JSON.stringify(formData)})
+    .then((response) => response.json())
+    .then((data) => {
+      setUser(data);
+
+      navigate(prevRoute || "/profile")
+    });
+   } catch(error) {
+      setLoginError(error);
+    }*/
+
+
+
+
+    /*const existsUser = user.map(
+      (users) =>
+        users.correo === formData.email && users.password === formData.password
     );
     if (existsUser) {
       setUser(existsUser);
       setLoginError("");
-      navigate(prevRoute || "/");
+      navigate(prevRoute || "/profile");
     } else {
-      setUser(false);
+      setUser(false); 
+      console.log(existsUser);
+      console.log("Adios");
       setLoginError("Usuario o contraseña incorrectos");
     }
-  };
+  };*/
 
   const logoutUser = () => {
     setUser(null);
@@ -52,20 +72,32 @@ function App() {
   };
 
   return (
-    <>
+    <> 
       <div>
+     <Toggle
+        checked={theme}
+        onChange={({ target }) => setTheme(target.checked)}
+        icons={{ checked: "🔆", unchecked: "🌙" }}
+        aria-label="Dark mode toggle"
+      />
+      <div className={theme ? "light" : "dark"}>
+      <color.Provider value={theme}>
         <NavBar user={user} logoutUser={logoutUser}/>
+        <contextUse.Provider value={user}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/training" element={<TrainingList trainings={trainings}/>} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
+          {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
           <Route path="/profile" element={<PersonalArea />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </contextUse.Provider>
+        </color.Provider>
+        </div>
         <Footer/>
       </div>
     </>
