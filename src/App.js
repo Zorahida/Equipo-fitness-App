@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import userList from "../src/data/userList.json";
 import { useNavigate } from "react-router-dom";
-import { Component, useState } from "react";
+import { useState } from "react";
 import NavBar from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
