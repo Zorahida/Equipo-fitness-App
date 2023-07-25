@@ -75,7 +75,7 @@ function Contact() {
                 name="nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Luisa"
+                placeholder="John"
                 required
               />
               {name !== "" && !patterns.name.test(name) && (
@@ -88,7 +88,7 @@ function Contact() {
                 name="nombre"
                 value={surname}
                 onChange={(e) => setSurname(e.target.value)}
-                placeholder="Madrigal"
+                placeholder="Null"
                 required
               />
               {surname !== "" && !patterns.name.test(surname) && (
@@ -101,7 +101,7 @@ function Contact() {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Luisa@upgradehub.com"
+                placeholder="Hello@upgradehub.com"
                 required
               />
               {email !== "" && !patterns.email.test(email) && (
