@@ -12,9 +12,8 @@ function UserList() {
   const response = await axios.get(
           `https://proyect-back-final1.vercel.app/usuariosBase`);
 
-  const user = response.data.results()
-      setUser(user);
-          console.log(response.data.results);
+      setUser(response.data)
+          
       };
 
       useEffect(() => {
@@ -22,12 +21,12 @@ function UserList() {
       }, []);
 
   const renderUser = () => {
-      return listUser.map((user) => (
-         <div key= {user._id}>
-           <h4> {user.username}</h4>
+      return listUser.map((usuario) => (
+         <div key= {usuario._id}>
+           <h4> {usuario.username}</h4>
            <ul>
-           <li>{user._id}</li>
-           <li>{user.nombre}</li>
+           <li>{usuario._id}</li>
+           <li>{usuario.nombre}</li>
           </ul>
         
       </div>

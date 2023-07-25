@@ -1,32 +1,27 @@
 import { useState } from "react";
 import "./ContactStyle.css";
 import "../TerminosyCondiciones/TerminosyCondiciones";
-import styled from '@emotion/styled';
-
-const Button = styled.button`
-  color: turquoise;
-`
-
-
 
 function Contact() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [contactMethod, setContactMethod] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-
   const messages = {
     name: "Debes introducir un nombre correcto",
+    surname: "Debes introducir tus apellidos",
     email: "Debes introducir una dirección correcta",
     phone: "Debes introducir un número correcto",
+    message: "Por favor, indíquenos su consulta",
   };
 
   const patterns = {
-    name: /^[A-Za-z]+$/i,
-    email:
-      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    name: /^[A-Za-záéíóúñÑÁÉÍÓÚ\s'-]+$/i,
+    surname: /^[A-Za-záéíóúñÑÁÉÍÓÚ\s'-]+$/i,
+    email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
     phone: /^[+0-9]+$/i,
   };
 
@@ -35,6 +30,7 @@ function Contact() {
     setSurname("");
     setEmail("");
     setPhone("");
+    setMessage("");
     setContactMethod("");
     setTermsAccepted(false);
   };
@@ -44,18 +40,22 @@ function Contact() {
     surname !== "" &&
     email !== "" &&
     phone !== "" &&
+    message !== "" &&
     contactMethod !== "" &&
     termsAccepted &&
     patterns.name.test(name) &&
+    patterns.surname.test(surname) &&
     patterns.email.test(email) &&
     patterns.phone.test(phone);
 
   const submitForm = (ev) => {
     ev.preventDefault();
     if (isFormValid) {
+      alert("Formulario enviado!");
+      handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
     } else {
       alert(
-        "Por favor, completa todos los campos correctamente antes de enviar."
+        "Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar."
       );
     }
   };
@@ -122,11 +122,15 @@ function Contact() {
               )}
             </label>
             <br></br>
+            Mensaje:{" "}
             <textarea
               name="mensaje"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               rows="10"
               cols="40"
               placeholder="Escriba aquí su mensaje"
+              required
             ></textarea>
           </div>
 
@@ -137,6 +141,7 @@ function Contact() {
                 type="radio"
                 name="btnRadio"
                 value="teléfono"
+                checked={contactMethod ==="teléfono"}
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
@@ -147,6 +152,7 @@ function Contact() {
                 type="radio"
                 name="btnRadio"
                 value="email"
+                checked={contactMethod === "email"}
                 onChange={() => setContactMethod("email")}
                 required
               />
@@ -157,6 +163,7 @@ function Contact() {
                 type="radio"
                 name="btnRadio"
                 value="none"
+                checked={contactMethod ==="none"}
                 onChange={() => setContactMethod("none")}
                 required
               />
@@ -169,12 +176,6 @@ function Contact() {
               <a href="https://www.upgrade-hub.com/privacidad/">
                 Acepto los términos y condiciones{""}
               </a>
-
-             
-`
-
-<Button>This my button component.</Button>
-
 
               <input
                 type="checkbox"
@@ -192,14 +193,6 @@ function Contact() {
               type="submit"
               value="send"
               disabled={!isFormValid && !termsAccepted}
-              onClick={() =>
-                isFormValid
-                  ? alert("Formulario enviado!")
-                  : alert(
-                      "Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar."
-                    )
-              }
-              onMouseUp={handlerReset}
             >
               Enviar
             </button>
