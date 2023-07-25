@@ -7,6 +7,7 @@ import Toggle from "react-toggle";
 import NavBar from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
+import TerminosyCondiciones from "./components/TerminosyCondiciones/TerminosyCondiciones";
 //import Login from "./components/Login/Login";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
@@ -14,9 +15,13 @@ import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
 import TrainingList from "./components/TrainingList/TrainingList";
 import PersonalArea from "./components/PersonalArea/PersonalArea";
+import React from "react";
 import UserList from "./components/UserList/UserList";
 
-function App() {
+
+
+
+function App () {
 
   const navigate = useNavigate();
 
@@ -82,6 +87,10 @@ function App() {
       />
       <div className={theme ? "light" : "dark"}>
       <color.Provider value={theme}>
+   
+       {/* <>
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
         <NavBar user={user} logoutUser={logoutUser}/>
         <contextUse.Provider value={user}>
         <Routes>
@@ -90,9 +99,10 @@ function App() {
           <Route path="/register" element={<Register />} />
           {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
           <Route path="/profile" element={<PersonalArea />} />
-          <Route path="/users" element={<UserList />} />
+          <Route path="/userList" element={<UserList />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/terminosycondiciones" element={<TerminosyCondiciones />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </contextUse.Provider>
@@ -103,6 +113,7 @@ function App() {
     </>
   );
 }
+
 
 
 export default App;

@@ -1,67 +1,71 @@
 import { useState } from "react";
-import {useForm} from "react-hook-form";
 import "./ContactStyle.css";
-import "./TerminosyCondiciones";
+import "../TerminosyCondiciones/TerminosyCondiciones";
 
-function Contact ()  {
-
+function Contact() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [contactMethod, setContactMethod] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-
-
   const messages = {
     name: "Debes introducir un nombre correcto",
+    surname: "Debes introducir tus apellidos",
     email: "Debes introducir una dirección correcta",
-    phone: "Debes introducir un número correcto"
+    phone: "Debes introducir un número correcto",
+    message: "Por favor, indíquenos su consulta",
   };
 
   const patterns = {
-    name: /^[A-Za-z]+$/i,
+    name: /^[A-Za-záéíóúñÑÁÉÍÓÚ\s'-]+$/i,
+    surname: /^[A-Za-záéíóúñÑÁÉÍÓÚ\s'-]+$/i,
     email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-    phone: /^[+0-9]+$/i
-    };
+    phone: /^[+0-9]+$/i,
+  };
 
-    const handlerReset = () => {
-      setName("");
-      setSurname("");
-      setEmail("");
-      setPhone("");
-      setContactMethod("");
-      setTermsAccepted(false);
+  const handlerReset = () => {
+    setName("");
+    setSurname("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+    setContactMethod("");
+    setTermsAccepted(false);
+  };
 
-    };
-
-    const isFormValid =
+  const isFormValid =
     name !== "" &&
     surname !== "" &&
     email !== "" &&
     phone !== "" &&
+    message !== "" &&
     contactMethod !== "" &&
     termsAccepted &&
     patterns.name.test(name) &&
-  patterns.email.test(email) &&
-  patterns.phone.test(phone);
- 
+    patterns.surname.test(surname) &&
+    patterns.email.test(email) &&
+    patterns.phone.test(phone);
+
   const submitForm = (ev) => {
     ev.preventDefault();
-        if (isFormValid) {
+    if (isFormValid) {
+      alert("Formulario enviado!");
+      handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
     } else {
-      alert("Por favor, completa todos los campos correctamente antes de enviar.");
+      alert(
+        "Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar."
+      );
     }
- };
+  };
 
-
-    return (
-
-      <>
-        <div className="Title">
-          <h1>CONTACTA CON NOSOTROS</h1>
-        </div>
-        <form className="form" onSubmit={submitForm}>
+  return (
+    <>
+      <div className="Title">
+        <h1>CONTACTA CON NOSOTROS</h1>
+      </div>
+      <form className="form" onSubmit={submitForm}>
         <div className="main-container">
           <div className="container-details">
             <label>
@@ -73,10 +77,11 @@ function Contact ()  {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Luisa"
                 required
-                />
-                {name !== "" && !patterns.name.test(name) && (
-              <span style={{ color: "red" }}>{messages.name}</span>)}
-              
+              />
+              {name !== "" && !patterns.name.test(name) && (
+                <span style={{ color: "red" }}>{messages.name}</span>
+              )}
+              <br></br>
               Apellidos:{" "}
               <input
                 type="text"
@@ -86,10 +91,10 @@ function Contact ()  {
                 placeholder="Madrigal"
                 required
               />
-            {surname !== "" && !patterns.name.test(surname) && (
-              <span style={{ color: "red" }}>{messages.name}</span>
-            )}
-
+              {surname !== "" && !patterns.name.test(surname) && (
+                <span style={{ color: "red" }}>{messages.name}</span>
+              )}
+              <br></br>
               Email:{" "}
               <input
                 type="email"
@@ -100,9 +105,9 @@ function Contact ()  {
                 required
               />
               {email !== "" && !patterns.email.test(email) && (
-              <span style={{ color: "red" }}>{messages.email}</span>
-            )}
-
+                <span style={{ color: "red" }}>{messages.email}</span>
+              )}
+              <br></br>
               Teléfono:{" "}
               <input
                 type="tel"
@@ -113,11 +118,20 @@ function Contact ()  {
                 required
               />
               {phone !== "" && !patterns.phone.test(phone) && (
-              <span style={{ color: "red" }}>{messages.phone}</span>
-            )}
+                <span style={{ color: "red" }}>{messages.phone}</span>
+              )}
             </label>
-            <label>Escriba su mensaje</label>
-      <textarea maxlength="300" name="message" />
+            <br></br>
+            Mensaje:{" "}
+            <textarea
+              name="mensaje"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows="10"
+              cols="40"
+              placeholder="Escriba aquí su mensaje"
+              required
+            ></textarea>
           </div>
 
           <div className="container-radios">
@@ -127,16 +141,18 @@ function Contact ()  {
                 type="radio"
                 name="btnRadio"
                 value="teléfono"
+                checked={contactMethod ==="teléfono"}
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
-             Vía telefónica
+              Vía telefónica
             </label>
             <label>
               <input
                 type="radio"
                 name="btnRadio"
                 value="email"
+                checked={contactMethod === "email"}
                 onChange={() => setContactMethod("email")}
                 required
               />
@@ -147,6 +163,7 @@ function Contact ()  {
                 type="radio"
                 name="btnRadio"
                 value="none"
+                checked={contactMethod ==="none"}
                 onChange={() => setContactMethod("none")}
                 required
               />
@@ -156,7 +173,9 @@ function Contact ()  {
 
           <div className="container-terms">
             <label>
-            <a href="https://www.upgrade-hub.com/privacidad/">Acepto los términos y condiciones{""}</a> 
+              <a href="https://www.upgrade-hub.com/privacidad/">
+                Acepto los términos y condiciones{""}
+              </a>
 
               <input
                 type="checkbox"
@@ -174,17 +193,14 @@ function Contact ()  {
               type="submit"
               value="send"
               disabled={!isFormValid && !termsAccepted}
-              onClick={()=> isFormValid ?
-      alert("Formulario enviado!") : alert("Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar.")}
-              onMouseUp={handlerReset}>
-             Enviar
+            >
+              Enviar
             </button>
           </div>
         </div>
-        </form>
-      </>
-    );
-  }
-
+      </form>
+    </>
+  );
+}
 
 export default Contact;
