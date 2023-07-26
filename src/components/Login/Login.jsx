@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 
 const initial_state = {
-  email: "",
+  correo: "",
   password: "",
 };
 
@@ -32,16 +32,16 @@ const Login = ({ loginUser, loginError }) => {
       <div className="container-login">
         <div className="body-login">
           <form className="form-login" onSubmit={submitForm}>
-            <label htmlFor="email">
+            <label htmlFor="correo">
               {/*Email*/}
               <input
                 className="register_input"
                 type="email"
-                name="email"
-                id="email"
+                name="correo"
+                id="correo"
                 placeholder="Email*"
                 onChange={changeInput}
-                value={formData.email}
+                value={formData.correo}
               />
             </label>
             <label htmlFor="pass">
