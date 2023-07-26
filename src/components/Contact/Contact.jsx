@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ContactStyle.css";
+import "./Contact.css";
 import "../TerminosyCondiciones/TerminosyCondiciones";
 
 function Contact() {

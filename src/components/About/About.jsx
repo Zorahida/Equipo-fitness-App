@@ -3,18 +3,15 @@
 
 import pic from "../../assets/images/450_1000.jpg"
 import cubofit from "../../assets/images/gimnasios_post_covid.jpg"
+import "./About.css"
 
 function About() {
         return (
-        <>
-        <header className='header'>
-        <h1>UpgradeFit Gym</h1>
-        <img src={pic} alt="Gym" />
-        </header>
-        <main className='Main'>
+        <main className='main_about'>
         <div >
+        <h1>UpgradeFit Gym</h1>
+        <img className="about_pic" src={pic} alt="Gym" />
            <p>Nuestra historia</p>
-    
            <section>Somos una empresa que nace en 2013 con una vocación muy marcada dentro del sector del fitness, utilizar la experiencia adquirida gestionando grandes proyectos deportivos por parte de un joven equipo de profesionales para crear instalaciones acordes a las nuevas preferencias y hábitos de los usuarios. Todo el trabajo de los primeros años se centró en evolucionar cada variable relacionada con el precio, la propuesta de valor y la experiencia del socio.</section>
            <aside>
             <img src={cubofit} alt="Gimnasio"/>
@@ -28,9 +25,7 @@ function About() {
         </div>
 
         </main>
-    </>
     )
-    }   
-    
+    }
     export default About;
 

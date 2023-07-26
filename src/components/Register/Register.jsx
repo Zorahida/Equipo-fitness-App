@@ -13,7 +13,7 @@ const Register = () => {
     }
   return (
     
-    <div className='planilla-register'>
+    <div className='plantilla-register'>
       <h1> Formulario de Registro </h1>
       <form onSubmit={handleSubmit(result)}>
       <input typeclass='text' placeholder='Nombre' {...register('Nombre', {

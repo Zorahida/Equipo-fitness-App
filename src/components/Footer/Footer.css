@@ -2,8 +2,8 @@
     background-color: black;
     color: white;
     text-decoration: none;
-    padding: 20px;
     text-align: center;
+    width: 100%;
 }
 .footer_list{
     display: flex;
@@ -22,8 +22,6 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 14px;
-
-
 }
 .logout{
     list-style: none;
@@ -36,4 +34,7 @@
     width: 30px;
     height: 30px;
     margin: 20px;
+}
+.footer_text{
+    padding: 20px;
 }

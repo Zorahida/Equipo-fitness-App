@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     font-size: calc(10px + 2vmin);
+    margin-top: 150px;
 }
 .form{
     background-color: #ecedf1;

@@ -59,11 +59,7 @@ function App () {
   };
 
   return (
-   
-        <>
-        <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-         
+    <>
          <div>
         <NavBar user={user} logoutUser={logoutUser}/>
         <Routes>

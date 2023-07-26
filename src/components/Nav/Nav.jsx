@@ -1,11 +1,14 @@
 import './nav.css'
 import { Link } from "react-router-dom";
 
+const logo = require("../../assets/images/Black and Brown Vintage Fitness Center Logo .png")
+
 const NavBar = ({ user, logoutUser }) => {
   return (
     <nav>
       <div className="container-nav">
         <ul className="menu-nav">
+          <img className="logo" src={logo} alt="logo"></img>
           <li className='list-nav'>
             <Link to="/">Inicio</Link>
           </li>
@@ -26,11 +29,12 @@ const NavBar = ({ user, logoutUser }) => {
             <Link to="/profile">Área personal</Link>
           </li>
           <li className='list-nav'>
-            <Link to="/contact">Contacto</Link>
-          </li>
-          <li className='list-nav'>
             <Link to="/about">Acerca de nosotros</Link>
           </li>
+          <li className='list-nav'>
+            <Link to="/contact">Contacto</Link>
+          </li>
+          
         </ul>
       </div>
     </nav>
