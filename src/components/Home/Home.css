@@ -5,6 +5,33 @@
     padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+
+html,
+body{
+    font-size: 18px;
+    background-color: #f5f7f9;
+}
+
+h1{
+    max-width: 940px;
+    font-size: 2.5em;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 40px 0;
+}
+
+.App{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
 .contenedor-principal {
     display: flex;
     flex-wrap: wrap;

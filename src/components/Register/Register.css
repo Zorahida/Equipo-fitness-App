@@ -1,3 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.planilla-register{
+ text-align: center;
+ min-width: 43vw;
+  height: 37vh;
+  margin: 1% 18%;
+  padding: 1em;
+  border-radius: 55px;
+  background: #cdc2c2;
+}
+
 .submit{
     display: flex;
     padding: 10px;
@@ -12,6 +27,7 @@
     margin: auto;
 }
 
+<<<<<<< HEAD
 .plantilla-register{
     margin: 10% 20%;
     display: flex;
@@ -36,4 +52,12 @@
 .register_title{
     text-align: center;
     padding-bottom: 50px;
+=======
+}
+
+.p{
+    font-size: 14px;
+    color:blue
+    
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
 }

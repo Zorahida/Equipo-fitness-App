@@ -1,0 +1,42 @@
+.contenedor-servicios{
+    width: 1070px;
+    height: 300px;
+    margin: 10px 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(246, 247, 247);
+    box-shadow: inset;
+    
+
+}
+
+.imagen-servicios{
+    height: 100%;
+    width: auto;
+}
+
+.contenedor-texto {
+    text-align: center;
+    padding: 40px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+.nombre-servicio{
+
+    font-size: 2.3rem;
+    font-style: oblique;
+    text-align: center;
+    font-weight: bold;
+    
+
+
+}
+
+
+.explicacion-servicio{
+    font-size: 1.1rem;
+    text-align: justify;
+}

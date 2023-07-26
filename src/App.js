@@ -17,6 +17,7 @@ import TrainingList from "./components/TrainingList/TrainingList";
 import PersonalArea from "./components/PersonalArea/PersonalArea";
 import React from "react";
 import UserList from "./components/UserList/UserList";
+import UserModify from "./components/UserList/UserModify";
 
 function App() {
   const navigate = useNavigate();

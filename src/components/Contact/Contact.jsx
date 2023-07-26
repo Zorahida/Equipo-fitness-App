@@ -1,8 +1,35 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import "./Contact.css";
 import "../TerminosyCondiciones/TerminosyCondiciones";
 
 function Contact() {
+=======
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import {useForm} from "react-hook-form";
+import "./ContactStyle.css";
+import "./TerminosyCondiciones";
+
+
+
+function Contact ()  {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {        
+
+    console.log("enviando email");
+
+    emailjs.sendForm('service_rqie7fl', 'template_g5e7uie', form.current, 'bpAtvu5HoUkk88R-t')
+      .then((result) => {
+          console.log("email sent:", result.text);
+      }, (error) => {
+          console.log("Error sending email", error.text);
+      });    
+  }
+
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -10,6 +37,12 @@ function Contact() {
   const [message, setMessage] = useState("");
   const [contactMethod, setContactMethod] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+<<<<<<< HEAD
+=======
+  const [message, setMessage] = useState("");
+
+
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
   const messages = {
     name: "Debes introducir un nombre correcto",
     surname: "Debes introducir tus apellidos",
@@ -36,6 +69,7 @@ function Contact() {
     setTermsAccepted(false);
   };
 
+<<<<<<< HEAD
   const isFormValid =
     name !== "" &&
     surname !== "" &&
@@ -90,6 +124,80 @@ function Contact() {
               placeholder="Madrigal"
               required
             />
+=======
+    };
+
+    const isFormValid = () => {
+      return (
+        name !== "" &&
+        surname !== "" &&
+        email !== "" &&
+        phone !== "" &&
+        contactMethod !== "" &&
+        termsAccepted &&
+        patterns.name.test(name) &&
+        patterns.email.test(email) &&
+        patterns.phone.test(phone)
+      );
+    };
+ 
+
+    const submitForm = (ev) => {      
+    ev.preventDefault();
+    console.log("Estoy en la funcion despues del preventdefault")
+      
+      
+      if (isFormValid() && contactMethod === "email") {    
+        console.log("condiciones cumplidas")    
+          sendEmail();          
+          handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
+          setMessage("Mensaje enviado con éxito, ¡Recibirá una notificación en su email!");         
+      }else if (isFormValid()) {
+        console.log("condiciones cumplidas sin email")
+        handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
+        setMessage("Mensaje enviado con éxito!");
+      } else {
+        setMessage("Debes rellenar los campos con información correcta");
+      }
+
+    }
+ 
+  
+
+
+
+    return (
+
+      <>
+        <div className="Title">
+          <h1>CONTACTA CON NOSOTROS</h1>
+        </div>
+        <form className="form" ref={form} onSubmit={submitForm}>
+        <div className="main-container">
+          <div className="container-details">
+            <label>
+              Nombre:{" "}
+              <input
+                type="text"
+                name="nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Luisa"
+                required
+                />
+                {name !== "" && !patterns.name.test(name) && (
+              <span style={{ color: "red" }}>{messages.name}</span>)}
+              
+              Apellidos:{" "}
+              <input
+                type="text"
+                name="surname"
+                value={surname}
+                onChange={(e) => setSurname(e.target.value)}
+                placeholder="Madrigal"
+                required
+              />
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
             {surname !== "" && !patterns.name.test(surname) && (
               <span style={{ color: "red" }}>{messages.name}</span>
             )}
@@ -119,6 +227,7 @@ function Contact() {
             {phone !== "" && !patterns.phone.test(phone) && (
               <span style={{ color: "red" }}>{messages.phone}</span>
             )}
+<<<<<<< HEAD
             <label>{/* Mensaje:{" "} */}</label>
             <textarea
             className="textarea"
@@ -130,6 +239,11 @@ function Contact() {
               placeholder="Escriba aquí su mensaje"
               required
             ></textarea>
+=======
+            </label>
+            <label>Escriba su mensaje</label>
+      <textarea maxLength="300" name="message" />
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
           </div>
 
           <div className="container-radios">
@@ -192,12 +306,21 @@ function Contact() {
             <button
               className="button"
               type="submit"
+<<<<<<< HEAD
               value="send"
               disabled={!isFormValid && !termsAccepted}
             >
               Enviar
+=======
+              disabled={!termsAccepted}
+              onClick={(ev) => {setMessage(""); submitForm(ev);}}>
+                Enviar
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
             </button>
           </div>
+          <p style={{ color: message.startsWith('Debes') ? 'red' : 'green' }}>
+          {message}
+        </p>
         </div>
       </form>
     </>

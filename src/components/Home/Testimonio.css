@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .contenedor-testimonio {
   width: 70%;
   margin: 10px 10px 50px;
@@ -12,6 +13,19 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   transition: all 0.6s ease;
+=======
+.contenedor-testimonio{
+    width: 870px;
+    height: 200px;
+    margin: 10px 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(78, 138, 141);
+    box-shadow: 0 3px 13px 1px rgb(134, 132, 132) (0,0,0 / 9%);
+    
+
+>>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
 }
 
 .contenedor-testimonio:hover{
