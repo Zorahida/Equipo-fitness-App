@@ -1,8 +1,8 @@
 .section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 30%));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 45%));
   grid-gap: 50px;
-  margin-top: 150px;
+  margin-top: 90px;
   justify-content: center;
 }
 

@@ -13,11 +13,11 @@
   background: darkgoldenrod;
   color: white;
   text-transform: capitalize;
-  
 }
 
 .menu-nav {
   display: flex;
+  font-size: 12px;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
@@ -45,7 +45,7 @@
 }
 
 .logo {
-  width: 90px;
+  width: 50px;
   border-radius: 60px;
   margin: 10px;
 }
