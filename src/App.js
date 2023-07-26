@@ -85,7 +85,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/training" element={<TrainingList trainings={trainings}/>} />
           <Route path="/register" element={<Register />} />
-          {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
+          <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
           <Route path="/profile" element={<PersonalArea />} />
           <Route path="/userList" element={<UserList />} />
           <Route path="/UserModify/:usuario.Id" element={< UserModify/>} />

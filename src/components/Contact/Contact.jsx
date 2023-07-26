@@ -2,8 +2,8 @@ import { useState } from "react";
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import {useForm} from "react-hook-form";
-import "./ContactStyle.css";
-import "./TerminosyCondiciones";
+import "./Contact.css";
+import "../TerminosyCondiciones/TerminosyCondiciones";
 
 
 

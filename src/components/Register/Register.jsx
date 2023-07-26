@@ -3,7 +3,7 @@ import {useForm} from 'react-hook-form'
 import { useState } from "react";
 import './Register.css'
 import axios from 'axios'
-import "../Contact/TerminosyCondiciones"
+import "../TerminosyCondiciones/TerminosyCondiciones"
 
 const Register = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -54,9 +54,7 @@ const Register = () => {
         }
       })}/>
       {errors.Contraseña && <p>{errors.Contraseña.message}</p>}
-<<<<<<< HEAD
       <button className='submit'>Registrar</button>
-=======
 
       <div className="container-terms">
             <label>
@@ -77,7 +75,6 @@ const Register = () => {
       {Register === true &&<p>Gracias por Registrase!!</p>}
 
       </div>
->>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
 
       </form>
     </div>

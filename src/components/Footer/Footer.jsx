@@ -43,19 +43,11 @@ const Footer = () => {
           <Link className="footer_list_element" to="/contact">Contacto</Link>
         </li>
       </ul>
-<<<<<<< HEAD
       <a href="https://www.instagram.com"><img className="footer_img" src={social1} alt=""></img></a>
       <a href="https://www.facebook.com"><img className="footer_img" src={social2} alt=""></img></a>
       <a href="https://www.twitter.com"><img className="footer_img" src={social3} alt=""></img></a>
       <p className="footer_text">
         ©2023 Gonzalo Cano | Zorahida Domínguez | Lorena Cobo |
-=======
-      <a href="#"><img className="footer_img" src={social1} alt=""></img></a>
-      <a href="#"><img className="footer_img" src={social2} alt=""></img></a>
-      <a href="#"><img className="footer_img" src={social3} alt=""></img></a>
-      <p>
-        ©2023 Gonzalo Cano | Lorena Cobo | Zorahida Domínguez  |
->>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
         Augusto Suñen | Andreu Rodríguez | All Rights Reserved
       </p>
     </nav>

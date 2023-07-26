@@ -27,7 +27,6 @@
     margin: auto;
 }
 
-<<<<<<< HEAD
 .plantilla-register{
     margin: 10% 20%;
     display: flex;
@@ -52,12 +51,4 @@
 .register_title{
     text-align: center;
     padding-bottom: 50px;
-=======
-}
-
-.p{
-    font-size: 14px;
-    color:blue
-    
->>>>>>> 34fcd6cf2fa9f8960e19c752f21cca54eec33382
 }
