@@ -78,7 +78,6 @@ function App() {
             {/* <>
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
-<<<<<<< HEAD
         <NavBar user={user} logoutUser={logoutUser}/>
         <contextUse.Provider value={user}>
         <Routes>
@@ -88,7 +87,7 @@ function App() {
           {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
           <Route path="/profile" element={<PersonalArea />} />
           <Route path="/userList" element={<UserList />} />
-          <Route path="/UserModify/:usuario.Id" element={<UserModify/>} />
+          <Route path="/UserModify/:usuario.Id" element={< UserModify/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/terminosycondiciones" element={<Terminos />} />
@@ -99,37 +98,5 @@ function App() {
         </div>
         </>
 )}
-=======
-            <NavBar user={user} logoutUser={logoutUser} />
-            {/* <contextUse.Provider value={user}> */}
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route
-                  path="/training"
-                  element={<TrainingList trainings={trainings} />}
-                />
-                <Route path="/register" element={<Register />} />
-                <Route
-                  path="/login"
-                  element={
-                    <Login loginUser={loginUser} loginError={loginError} />
-                  }
-                />
-                <Route path="/profile" element={<PersonalArea />} />
-                <Route path="/userList" element={<UserList />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/terminosycondiciones" element={<Terminos />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            {/* </contextUse.Provider>
-          </color.Provider> */}
-        {/* </div> */}
-        <Footer />
-      </div>
-    </>
-  );
-}
->>>>>>> 3e692d8799bba844d05515bec14613d195c2e527
 
 export default App;
