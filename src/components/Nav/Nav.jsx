@@ -7,7 +7,7 @@ const NavBar = ({ user, logoutUser }) => {
   return (
     <nav>
       <div className="container-nav">
-        <ul className="menu-nav">
+        <ul className="menu_nav">
           <img className="logo" src={logo} alt="logo"></img>
           <li className='list-nav'>
             <Link to="/">Inicio</Link>

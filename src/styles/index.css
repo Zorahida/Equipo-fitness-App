@@ -4,6 +4,7 @@
     font-family: "Montserrat";
     padding: 0;
     margin:0;
+    box-sizing: border-box;
 }
 
 html,body
@@ -15,3 +16,11 @@ html,body
     padding: 0px;
     overflow-x: hidden;
 }
+
+body{
+    min-height: 100vh;
+}
+
+html {
+    overflow-x: initial !important;
+  }

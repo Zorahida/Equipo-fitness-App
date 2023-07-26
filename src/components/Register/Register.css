@@ -1,18 +1,39 @@
 .submit{
+    display: flex;
     padding: 10px;
     font-size: 12px;
-    font-family: Roboto, sans-serif;
     border: none;
     border-radius: 4px 4px 4px 4px;
     cursor: pointer;
     outline: none;
-    background: rgb(45, 30, 214) ;
+    background: darkgoldenrod;
     color: white;
     text-transform: capitalize;
-
-
+    margin: auto;
 }
 
 .plantilla-register{
-    margin-top: 150px;
+    margin: 10% 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media (max-width: 668px) {
+        margin-top: 30%;
+      }@media (max-width: 564px) {
+        margin-top: 40%;
+      }
+}
+
+.register_input{
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.register_input::placeholder{
+    color: darkgoldenrod;
+}
+
+.register_title{
+    text-align: center;
+    padding-bottom: 50px;
 }

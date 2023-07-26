@@ -15,7 +15,7 @@
   text-transform: capitalize;
 }
 
-.menu-nav {
+.menu_nav {
   display: flex;
   font-size: 12px;
   flex-wrap: wrap;
@@ -26,10 +26,15 @@
   background-color: whitesmoke;
   width: 100%;
   border-bottom: 1px solid darkgoldenrod;
+  z-index: 100;
   position: fixed;
   top: 0;
+  @media (max-width: 950px) {
+    font-size: 8px;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
+    font-size: 12px;
   }
 }
 
@@ -47,5 +52,5 @@
 .logo {
   width: 50px;
   border-radius: 60px;
-  margin: 10px;
+  margin: 5px;
 }

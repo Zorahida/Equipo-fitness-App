@@ -1,87 +1,112 @@
-.Title{
-    background-color: rgb(174, 165, 165);
-    color: rgb(47, 58, 58);
-    min-height: 30vh;
+.contact_title{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-size: calc(10px + 2vmin);
-    margin-top: 150px;
-}
-.form{
-    background-color: #ecedf1;
     text-align: center;
-    width: 100%;
-    padding: 55px;
+    margin-top: 10%;
+    @media (max-width: 768px) {
+      margin-top: 30%;
+    }@media (max-width: 564px) {
+      margin-top: 40%;
+    }
 }
+
+.strong_title{
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 20px;
+      }
+}
+
 .main-container{
-  width: 90vw;
-  max-width: 740px;
-  height: 95vh;
-  margin: 0 auto;
-  padding: 1em;
-  border-radius: 55px;
-  background: #cdc2c2;
-  display: flex;
-  flex-wrap:nowrap;
-  flex-direction: column;
+    text-align: center;
+    margin: 1% 20%;
+    padding: 1em;
+    @media (max-width: 768px) {
+        font-size: 14px;
+        margin: 1% 10%;
+      }
+
 }
+
 .container-details{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 2rem;
-}
-::placeholder{
-    color: rgb(50, 163, 163);
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
 }
 .container-radios{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 2rem;
-
+    padding: 5%;
 }
 
 .container-terms{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 2rem;
+    width: 100%;
 }
 
-.btn{
+.button{
     width: 150px;
-    height: 49px;
+    height: px;
     border: none;
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #0e3881;
+    background-color: darkgoldenrod;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 10px;
-    transition: .8s;
+    margin:15px;
+    padding: 5px;
 }
-.btn:disabled{
-    width: 150px;
-    height: 49px;
+
+.button:disabled{
     border: none;
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #5995fd;
-    color: #fff;
+    background-color: antiquewhite;
+    color: darkgoldenrod;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
-    transition: .8s;
 }
 
-.btn:hover{
-    background-color: #576b87;
+.button:hover{
+    background-color: darkkhaki;
+}
+
+.textarea{
+    resize: none;
+    height: 100px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.textarea::placeholder{
+    color: darkgoldenrod;
+}
+
+.input::placeholder{
+    color: darkgoldenrod;
+}
+
+.div_radio{
+    width: 100%;
+}
+
+
+.input{
+    margin: 10px 0;
+    width: 100%;
+}
+
+.input_radio{
+    width: 20px;
+}
+
+.contact_terms{
+    color: darkgoldenrod;
 }
