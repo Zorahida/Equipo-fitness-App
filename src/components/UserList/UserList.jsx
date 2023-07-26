@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserModify from "./UserModify";
+import { StrictMode } from "react";
 
 
 function UserList() {
@@ -22,13 +23,13 @@ function UserList() {
 
     //ELIMINAR AL USER  
   const deleteUser = async (userId) => {
-      const deleteUser = await axios.delete(`https://proyect-back-final-olive.vercel.app/usuariosBase/${userId}`);
+       await axios.delete(`https://proyect-back-final-olive.vercel.app/usuariosBase/delUser/${userId}`);
       getAllUser(); //Para que devuelva la lista actualizada
   };
 
   //MODIFICAR AL USER
   const updateUser = async (userId, updateDetails) => {
-      await axios.put(`https://proyect-back-final-olive.vercel.app/usuariosBase/${userId}`, updateDetails);
+      await axios.put(`https://proyect-back-final-olive.vercel.app/usuariosBase/upUser/${userId}`, updateDetails);
       setUpdateUserDetails(updateDetails);
       getAllUser(); //Para que devuelva la lista de usuarios, ya modificada con los datos del nuevo user
   };
