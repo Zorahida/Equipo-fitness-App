@@ -88,15 +88,14 @@ function App() {
           {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
           <Route path="/profile" element={<PersonalArea />} />
           <Route path="/userList" element={<UserList />} />
-          <Route path="/userModify/:usuario.Id" element={<UserModify />} />
+          <Route path="/userList/:usuario.Id" element={<UserList><UserModify/></UserList>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/terminosycondiciones" element={<TerminosyCondiciones />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </contextUse.Provider>
-        </color.Provider>
-        </div>
+        <>
         <Footer/>
             <NavBar user={user} logoutUser={logoutUser} />
             {/* <contextUse.Provider value={user}> */}
@@ -124,9 +123,6 @@ function App() {
           </color.Provider> */}
         {/* </div> */}
         <Footer />
-      </div>
-    </>
-  );
-}
+        
 
 export default App;
