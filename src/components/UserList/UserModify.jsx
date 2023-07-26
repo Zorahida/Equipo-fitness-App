@@ -15,23 +15,30 @@ const handleModify = (e) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    updateUser(usuario._id,formDetail);
+    updateUser(usuario.Id,formDetail);
 
 return(
     <form onSubmit={handleSubmit}>
       <input
         type="text"
         name="nombre"
-        value={"nombre"}
+        value={formDetail.nombre}
         onChange={handleModify}
         placeholder="Nuevo nombre"
       />
       <input
         type="email"
         name="email"
-        value={""}
+        value={formDetail.email}
         onChange={handleModify}
         placeholder="Nuevo email"
+      />
+      <input
+        type="peso"
+        name="peso"
+        value={formDetail.peso}
+        onChange={handleModify}
+        placeholder="Nuevo peso"
       />
       <button type="submit">Guardar cambios</button>
     </form>

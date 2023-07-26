@@ -22,7 +22,6 @@
     "styled-components": "^6.0.5",
     "toggle": "^1.0.1",
     "web-vitals": "^3.4.0"
-    
   },
   "scripts": {
     "start": "react-scripts start",

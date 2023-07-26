@@ -28,7 +28,7 @@ function App() {
   const [trainings, setTrainings] = useState([]);
 
   useEffect(() => {
-    fetch("https://proyect-back-final1.vercel.app/fitnessBase")
+    fetch("https://proyect-back-final-olive.vercel.app/fitnessBase")
       .then((response) => response.json())
       .then((data) => {
         setTrainings(data);
@@ -37,7 +37,7 @@ function App() {
 
   const loginUser = (formData, prevRoute) => {
     console.log(formData);
-    fetch("http://localhost:4000/usuariosBase/login", {
+    fetch("https://proyect-back-final-olive.vercel.app/usuariosBase/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,41 +88,16 @@ function App() {
           {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
           <Route path="/profile" element={<PersonalArea />} />
           <Route path="/userList" element={<UserList />} />
-          <Route path="/userList/:usuario.Id" element={<UserList><UserModify/></UserList>} />
+          <Route path="/UserModify/:usuario.Id" element={<UserModify/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/terminosycondiciones" element={<TerminosyCondiciones />} />
+          <Route path="/terminosycondiciones" element={<Terminos />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </contextUse.Provider>
-        <>
         <Footer/>
-            <NavBar user={user} logoutUser={logoutUser} />
-            {/* <contextUse.Provider value={user}> */}
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route
-                  path="/training"
-                  element={<TrainingList trainings={trainings} />}
-                />
-                <Route path="/register" element={<Register />} />
-                <Route
-                  path="/login"
-                  element={
-                    <Login loginUser={loginUser} loginError={loginError} />
-                  }
-                />
-                <Route path="/profile" element={<PersonalArea />} />
-                <Route path="/userList" element={<UserList />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/terminosycondiciones" element={<Terminos />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            {/* </contextUse.Provider>
-          </color.Provider> */}
-        {/* </div> */}
-        <Footer />
-        
+        </div>
+        </>
+)}
 
 export default App;
