@@ -1,7 +1,6 @@
-import './login.css'
+import "./login.css";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-
 
 const initial_state = {
   correo: "",
@@ -27,15 +26,16 @@ const Login = ({ loginUser, loginError }) => {
 
   return (
     <>
-    <div className='title-login'>
-      <h1>Iniciar sesión</h1>
-    </div>
+      <div className="title-login">
+        <h1>Iniciar sesión</h1>
+      </div>
       <div className="container-login">
         <div className="body-login">
           <form className="form-login" onSubmit={submitForm}>
             <label htmlFor="correo">
               {/*Email*/}
               <input
+                className="register_input"
                 type="email"
                 name="correo"
                 id="correo"
@@ -47,6 +47,7 @@ const Login = ({ loginUser, loginError }) => {
             <label htmlFor="pass">
               {/*Contraseña*/}
               <input
+                className="register_input"
                 type="password"
                 name="password"
                 id="pass"
@@ -55,16 +56,19 @@ const Login = ({ loginUser, loginError }) => {
                 value={formData.password}
               />
             </label>
-            <button className="submit-login" type="submit">Iniciar sesión</button>
-            <div className='error-login'>
-            {loginError ? (
-              <p style={{ color: "red" }}>{loginError}</p>
-            ) : null}
-            </div>          
+            <button className="submit-login" type="submit">
+              Iniciar sesión
+            </button>
+            <div className="error-login">
+              {loginError ? <p style={{ color: "red" }}>{loginError}</p> : null}
+            </div>
           </form>
-          <div className='redirect-login'>
-          <Link to="/register">¿Aún no tienes cuenta? Regístrate</Link>
-                </div>
+          <div className="redirect-login">
+            <Link className="register_link" to="/register">
+              ¿Aún no tienes cuenta? Regístrate
+            </Link>
+          </div>
+          <p className="login_text">*Campo requerido</p>
         </div>
       </div>
     </>

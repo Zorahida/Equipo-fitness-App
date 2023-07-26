@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ContactStyle.css";
+import "./Contact.css";
 import "../TerminosyCondiciones/TerminosyCondiciones";
 
 function Contact() {
@@ -21,7 +21,8 @@ function Contact() {
   const patterns = {
     name: /^[A-Za-záéíóúñÑÁÉÍÓÚ\s'-]+$/i,
     surname: /^[A-Za-záéíóúñÑÁÉÍÓÚ\s'-]+$/i,
-    email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    email:
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
     phone: /^[+0-9]+$/i,
   };
 
@@ -62,68 +63,65 @@ function Contact() {
 
   return (
     <>
-      <div className="Title">
-        <h1>CONTACTA CON NOSOTROS</h1>
-      </div>
+        <h1 className="contact_title">Contáctanos</h1>
       <form className="form" onSubmit={submitForm}>
         <div className="main-container">
           <div className="container-details">
-            <label>
-              Nombre:{" "}
-              <input
-                type="text"
-                name="nombre"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="John"
-                required
-              />
-              {name !== "" && !patterns.name.test(name) && (
-                <span style={{ color: "red" }}>{messages.name}</span>
-              )}
-              <br></br>
-              Apellidos:{" "}
-              <input
-                type="text"
-                name="nombre"
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
-                placeholder="Null"
-                required
-              />
-              {surname !== "" && !patterns.name.test(surname) && (
-                <span style={{ color: "red" }}>{messages.name}</span>
-              )}
-              <br></br>
-              Email:{" "}
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Hello@upgradehub.com"
-                required
-              />
-              {email !== "" && !patterns.email.test(email) && (
-                <span style={{ color: "red" }}>{messages.email}</span>
-              )}
-              <br></br>
-              Teléfono:{" "}
-              <input
-                type="tel"
-                name="Teléfono"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="600606060"
-                required
-              />
-              {phone !== "" && !patterns.phone.test(phone) && (
-                <span style={{ color: "red" }}>{messages.phone}</span>
-              )}
-            </label>
-            <br></br>
-            Mensaje:{" "}
+            <label>{/* Nombre:{" "} */}</label>
+            <input
+              className="input"
+              type="text"
+              name="nombre"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Luisa"
+              required
+            />
+            {name !== "" && !patterns.name.test(name) && (
+              <span style={{ color: "red" }}>{messages.name}</span>
+            )}
+            <label>{/* Apellidos:{" "} */}</label>
+            <input
+              className="input"
+              type="text"
+              name="nombre"
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
+              placeholder="Madrigal"
+              required
+            />
+            {surname !== "" && !patterns.name.test(surname) && (
+              <span style={{ color: "red" }}>{messages.name}</span>
+            )}
+            {/* Email:{" "} */}
+            <input
+              className="input"
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Luisa@upgradehub.com"
+              required
+            />
+            {email !== "" && !patterns.email.test(email) && (
+              <span style={{ color: "red" }}>{messages.email}</span>
+            )}
+            <label>{/* Teléfono:{" "} */}</label>
+            <input
+              className="input"
+              type="tel"
+              name="Teléfono"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="600606060"
+              required
+            />
+            {phone !== "" && !patterns.phone.test(phone) && (
+              <span style={{ color: "red" }}>{messages.phone}</span>
+            )}
+            <label>{/* Mensaje:{" "} */}</label>
             <textarea
+            className="textarea"
               name="mensaje"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -135,20 +133,23 @@ function Contact() {
           </div>
 
           <div className="container-radios">
-            <h3>Como quiero que me contacten:</h3>
-            <label>
+            <p className="strong_title"><strong>Como quiero que me contacten:</strong></p>
+            <div className="div_radio">
+              <label>Vía telefónica</label>
               <input
+                className="input_radio"
                 type="radio"
                 name="btnRadio"
                 value="teléfono"
-                checked={contactMethod ==="teléfono"}
+                checked={contactMethod === "teléfono"}
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
-              Vía telefónica
-            </label>
-            <label>
+            </div>
+            <div className="div_radio">
+              <label>Vía correo electrónico</label>
               <input
+                className="input_radio"
                 type="radio"
                 name="btnRadio"
                 value="email"
@@ -156,40 +157,40 @@ function Contact() {
                 onChange={() => setContactMethod("email")}
                 required
               />
-              Vía correo electrónico
-            </label>
-            <label>
+            </div>
+            <div className="div_radio">
+              <label>No es necesario que me contacten</label>
               <input
+                className="input_radio"
                 type="radio"
                 name="btnRadio"
                 value="none"
-                checked={contactMethod ==="none"}
+                checked={contactMethod === "none"}
                 onChange={() => setContactMethod("none")}
                 required
               />
-              No es necesario que me contacten
-            </label>
+            </div>
           </div>
 
           <div className="container-terms">
             <label>
-              <a href="https://www.upgrade-hub.com/privacidad/">
+              <a className="contact_terms"href="https://www.upgrade-hub.com/privacidad/">
                 Acepto los términos y condiciones{""}
               </a>
-
-              <input
-                type="checkbox"
-                name="terminosCheckbox"
-                checked={termsAccepted}
-                onChange={() => setTermsAccepted(!termsAccepted)}
-                required
-              />
             </label>
+            <input
+              className="input_radio"
+              type="checkbox"
+              name="terminosCheckbox"
+              checked={termsAccepted}
+              onChange={() => setTermsAccepted(!termsAccepted)}
+              required
+            />
           </div>
 
-          <div>
+          <div className="div_button">
             <button
-              className="btn"
+              className="button"
               type="submit"
               value="send"
               disabled={!isFormValid && !termsAccepted}

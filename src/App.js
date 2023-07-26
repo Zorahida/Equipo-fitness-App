@@ -68,7 +68,7 @@ function App() {
   return (
     <>
       <div>
-        <Toggle
+        {/* <Toggle
           checked={theme}
           onChange={({ target }) => setTheme(target.checked)}
           icons={{ checked: "🔆", unchecked: "🌙" }}
@@ -76,8 +76,11 @@ function App() {
         />
         <div className={theme ? "light" : "dark"}>
           <color.Provider value={theme}>
+            {/* <>
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
             <NavBar user={user} logoutUser={logoutUser} />
-            <contextUse.Provider value={user}>
+            {/* <contextUse.Provider value={user}> */}
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route
@@ -106,13 +109,14 @@ function App() {
                 <Route path="/terminosycondiciones" element={<Terminos />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
-            </contextUse.Provider>
-          </color.Provider>
-        </div>
+            {/* </contextUse.Provider>
+          </color.Provider> */}
+        {/* </div> */}
         <Footer />
       </div>
     </>
   );
 }
+
 
 export default App;

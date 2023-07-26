@@ -32,10 +32,7 @@ const Footer = () => {
         </li>
         <li>
           <Link className="footer_list_element" to="/users">Lista de usuarios</Link>
-        </li>
-        <li>
-          <Link className="footer_list_element" to="/contact">Contacto</Link>
-        </li>
+        </li> 
         <li>
           <Link className="footer_list_element" to="/about">Acerca de nosotros</Link>
          </li>
@@ -43,14 +40,14 @@ const Footer = () => {
             <Link className="footer_list_element" to="/terminosycondiciones">Términos y condiciones</Link>
           </li>
         <li>
-          <button className="logout">Cerrar sesión</button>
+          <Link className="footer_list_element" to="/contact">Contacto</Link>
         </li>
       </ul>
-      <a href="#"><img className="footer_img" src={social1} alt=""></img></a>
-      <a href="#"><img className="footer_img" src={social2} alt=""></img></a>
-      <a href="#"><img className="footer_img" src={social3} alt=""></img></a>
-      <p>
-        ©2023 Gonzalo Cano | Lorena Cobo | Zorahida Domínguez | Lorena Cobo |
+      <a href="https://www.instagram.com"><img className="footer_img" src={social1} alt=""></img></a>
+      <a href="https://www.facebook.com"><img className="footer_img" src={social2} alt=""></img></a>
+      <a href="https://www.twitter.com"><img className="footer_img" src={social3} alt=""></img></a>
+      <p className="footer_text">
+        ©2023 Gonzalo Cano | Zorahida Domínguez | Lorena Cobo |
         Augusto Suñen | Andreu Rodríguez | All Rights Reserved
       </p>
     </nav>
