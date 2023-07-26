@@ -39,6 +39,9 @@ const Footer = () => {
         <li>
           <Link className="footer_list_element" to="/about">Acerca de nosotros</Link>
          </li>
+         <li>
+            <Link className="footer_list_element" to="/terminosycondiciones">Términos y condiciones</Link>
+          </li>
         <li>
           <button className="logout">Cerrar sesión</button>
         </li>
