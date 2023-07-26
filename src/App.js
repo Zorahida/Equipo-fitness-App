@@ -17,6 +17,7 @@ import TrainingList from "./components/TrainingList/TrainingList";
 import PersonalArea from "./components/PersonalArea/PersonalArea";
 import React from "react";
 import UserList from "./components/UserList/UserList";
+import UserModify from "./components/UserList/UserModify";
 
 
 
@@ -100,6 +101,7 @@ function App () {
           {/*<Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />*/}
           <Route path="/profile" element={<PersonalArea />} />
           <Route path="/userList" element={<UserList />} />
+          <Route path="/userModify/:usuario.Id" element={<UserModify />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/terminosycondiciones" element={<TerminosyCondiciones />} />
