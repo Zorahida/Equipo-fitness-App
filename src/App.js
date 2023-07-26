@@ -18,6 +18,7 @@ import PersonalArea from "./components/PersonalArea/PersonalArea";
 import React from "react";
 import UserList from "./components/UserList/UserList";
 import UserModify from "./components/UserList/UserModify";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
 
 function App() {
   const navigate = useNavigate();
@@ -86,7 +87,15 @@ function App() {
           <Route path="/training" element={<TrainingList trainings={trainings}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
-          <Route path="/profile" element={<PersonalArea />} />
+          <Route
+                  path="/profile"
+                  element={
+                    <AuthRoute
+                      user={user}
+                      component={<PersonalArea user={user} />}
+                    />
+                  }
+                />
           <Route path="/userList" element={<UserList />} />
           <Route path="/UserModify/:usuario.Id" element={< UserModify/>} />
           <Route path="/contact" element={<Contact />} />
