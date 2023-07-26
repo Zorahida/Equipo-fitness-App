@@ -1,0 +1,112 @@
+.contact_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+    @media (max-width: 768px) {
+      margin-top: 30%;
+    }@media (max-width: 564px) {
+      margin-top: 40%;
+    }
+}
+
+.strong_title{
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 20px;
+      }
+}
+
+.main-container{
+    text-align: center;
+    margin: 1% 20%;
+    padding: 1em;
+    @media (max-width: 768px) {
+        font-size: 14px;
+        margin: 1% 10%;
+      }
+
+}
+
+.container-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+}
+.container-radios{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5%;
+}
+
+.container-terms{
+    width: 100%;
+}
+
+.button{
+    width: 150px;
+    height: px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: darkgoldenrod;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin:15px;
+    padding: 5px;
+}
+
+.button:disabled{
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: darkgoldenrod;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.button:hover{
+    background-color: darkkhaki;
+}
+
+.textarea{
+    resize: none;
+    height: 100px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.textarea::placeholder{
+    color: darkgoldenrod;
+}
+
+.input::placeholder{
+    color: darkgoldenrod;
+}
+
+.div_radio{
+    width: 100%;
+}
+
+
+.input{
+    margin: 10px 0;
+    width: 100%;
+}
+
+.input_radio{
+    width: 20px;
+}
+
+.contact_terms{
+    color: darkgoldenrod;
+}

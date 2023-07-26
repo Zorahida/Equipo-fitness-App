@@ -1,45 +1,57 @@
-.section{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    grid-gap: 5px;
+.section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 45%));
+  grid-gap: 50px;
+  justify-content: center;
+  margin-top: 10%;
+  @media (max-width: 768px) {
+    margin-top: 40%;
+  }
 }
 
-.section_training_card{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    margin: 30px;
-    border: 1px solid grey;
-    border-radius: 20px;
-    box-shadow: 2px 2px 3px black;
+.section_training_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 40px;
+  margin: 30px;
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  transition: all 0.6s ease;
 }
 
-.span{
-    margin-bottom: 20px;
-    border: 0.5px solid black;
-    width: auto;
-    padding: 5px;
-    border-radius: 10px;
+.section_training_card:hover {
+  box-shadow: rgba(255, 172, 28, 0.199) -10px 10px,
+    rgba(255, 172, 28, 0.19) -20px 20px;
 }
 
-.tick{
-    width: 10px;
-    margin-right: 10px;
+.span {
+  margin-bottom: 20px;
+  border: 0.5px solid black;
+  width: auto;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-.video{
-    margin: 20px 0;
+.tick {
+  width: 10px;
+  margin-right: 10px;
 }
 
-.description{
-    color:chocolate;
-    margin:10px 0;
+.video {
+  margin: 20px 0;
 }
 
-.element{
-    margin: 5px 0;
+.description {
+  color: darkgoldenrod;
+  margin: 10px 0;
+}
+
+.element {
+  margin: 5px 0;
 }

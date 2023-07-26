@@ -7,8 +7,8 @@ import Toggle from "react-toggle";
 import NavBar from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import Register from "./components/Register/Register";
-import TerminosyCondiciones from "./components/TerminosyCondiciones/TerminosyCondiciones";
-//import Login from "./components/Login/Login";
+import Terminos from "./components/TerminosyCondiciones/TerminosyCondiciones";
+import Login from "./components/Login/Login";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound/NotFound";
@@ -19,58 +19,46 @@ import React from "react";
 import UserList from "./components/UserList/UserList";
 import UserModify from "./components/UserList/UserModify";
 
-
-
-
-function App () {
-
+function App() {
   const navigate = useNavigate();
 
   const [theme, setTheme] = useState(false);
   const [user, setUser] = useState(null);
- // const [loginError, setLoginError] = useState("");
+  const [loginError, setLoginError] = useState("");
   const [trainings, setTrainings] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://proyect-back-final1.vercel.app/fitnessBase")
-    .then((response) => response.json())
-    .then((data) => {
-      setTrainings(data);
+      .then((response) => response.json())
+      .then((data) => {
+        setTrainings(data);
+      });
+  }, []);
+
+  const loginUser = (formData, prevRoute) => {
+    console.log(formData);
+    fetch("http://localhost:4000/usuariosBase/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(formData),
     })
-  }, [])
-
-
-/*const loginUser = (formData, prevRoute) => {
-    try {
-    fetch("https://proyect-back-final1.vercel.app/usuariosBase", {method: "POST", body: JSON.stringify(formData)})
-    .then((response) => response.json())
-    .then((data) => {
-      setUser(data);
-
-      navigate(prevRoute || "/profile")
-    });
-   } catch(error) {
-      setLoginError(error);
-    }*/
-
-
-
-
-    /*const existsUser = user.map(
-      (users) =>
-        users.correo === formData.email && users.password === formData.password
-    );
-    if (existsUser) {
-      setUser(existsUser);
-      setLoginError("");
-      navigate(prevRoute || "/profile");
-    } else {
-      setUser(false); 
-      console.log(existsUser);
-      console.log("Adios");
-      setLoginError("Usuario o contraseña incorrectos");
-    }
-  };*/
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.userInfo) {
+          setUser(data.userInfo);
+          setLoginError("");
+          navigate(prevRoute || "/profile");
+        }else {
+          setUser(false);
+          setLoginError(data.message);
+          navigate("/login");
+        }
+      });
+  };
 
   const logoutUser = () => {
     setUser(null);
@@ -78,18 +66,17 @@ function App () {
   };
 
   return (
-    <> 
+    <>
       <div>
-     <Toggle
-        checked={theme}
-        onChange={({ target }) => setTheme(target.checked)}
-        icons={{ checked: "🔆", unchecked: "🌙" }}
-        aria-label="Dark mode toggle"
-      />
-      <div className={theme ? "light" : "dark"}>
-      <color.Provider value={theme}>
-   
-       {/* <>
+        {/* <Toggle
+          checked={theme}
+          onChange={({ target }) => setTheme(target.checked)}
+          icons={{ checked: "🔆", unchecked: "🌙" }}
+          aria-label="Dark mode toggle"
+        />
+        <div className={theme ? "light" : "dark"}>
+          <color.Provider value={theme}> */}
+            {/* <>
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
         <NavBar user={user} logoutUser={logoutUser}/>
@@ -111,11 +98,35 @@ function App () {
         </color.Provider>
         </div>
         <Footer/>
+            <NavBar user={user} logoutUser={logoutUser} />
+            {/* <contextUse.Provider value={user}> */}
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                  path="/training"
+                  element={<TrainingList trainings={trainings} />}
+                />
+                <Route path="/register" element={<Register />} />
+                <Route
+                  path="/login"
+                  element={
+                    <Login loginUser={loginUser} loginError={loginError} />
+                  }
+                />
+                <Route path="/profile" element={<PersonalArea />} />
+                <Route path="/userList" element={<UserList />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/terminosycondiciones" element={<Terminos />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            {/* </contextUse.Provider>
+          </color.Provider> */}
+        {/* </div> */}
+        <Footer />
       </div>
     </>
   );
 }
-
-
 
 export default App;
