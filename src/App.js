@@ -17,6 +17,7 @@ import TrainingList from "./components/TrainingList/TrainingList";
 import PersonalArea from "./components/PersonalArea/PersonalArea";
 import React from "react";
 import UserList from "./components/UserList/UserList";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
 
 function App() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function App() {
   const [trainings, setTrainings] = useState([]);
 
   useEffect(() => {
-    fetch("https://proyect-back-final1.vercel.app/fitnessBase")
+    fetch("https://proyect-back-final-olive.vercel.app/fitnessBase")
       .then((response) => response.json())
       .then((data) => {
         setTrainings(data);
@@ -36,7 +37,7 @@ function App() {
 
   const loginUser = (formData, prevRoute) => {
     console.log(formData);
-    fetch("http://localhost:4000/usuariosBase/login", {
+    fetch("https://proyect-back-final-olive.vercel.app/usuariosBase/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +52,7 @@ function App() {
           setUser(data.userInfo);
           setLoginError("");
           navigate(prevRoute || "/profile");
-        }else {
+        } else {
           setUser(false);
           setLoginError(data.message);
           navigate("/login");
@@ -75,9 +76,6 @@ function App() {
         />
         <div className={theme ? "light" : "dark"}>
           <color.Provider value={theme}>
-            {/* <>
-        <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
             <NavBar user={user} logoutUser={logoutUser} />
             <contextUse.Provider value={user}>
               <Routes>
@@ -93,7 +91,15 @@ function App() {
                     <Login loginUser={loginUser} loginError={loginError} />
                   }
                 />
-                <Route path="/profile" element={<PersonalArea />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <AuthRoute
+                      user={user}
+                      component={<PersonalArea user={user} />}
+                    />
+                  }
+                />
                 <Route path="/userList" element={<UserList />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/about" element={<About />} />

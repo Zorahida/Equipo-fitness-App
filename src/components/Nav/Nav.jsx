@@ -16,13 +16,6 @@ const NavBar = ({ user, logoutUser }) => {
             <Link to="/register">Registro</Link>
           </li>
           <li className='list-nav'>
-          {user ? (
-            <button className="button-nav" onClick={logoutUser}>Cerrar sesión</button>
-          ) : (
-            <Link to="/login">Iniciar sesión</Link>
-          )}
-        </li>
-          <li className='list-nav'>
             <Link to="/profile">Área personal</Link>
           </li>
           <li className='list-nav'>
@@ -31,6 +24,13 @@ const NavBar = ({ user, logoutUser }) => {
           <li className='list-nav'>
             <Link to="/about">Acerca de nosotros</Link>
           </li>
+          <li className='list-nav'>
+          {user ? (
+            <button className="button-nav" onClick={logoutUser}>Cerrar sesión</button>
+          ) : (
+            <Link to="/login">Iniciar sesión</Link>
+          )}
+        </li>
         </ul>
       </div>
     </nav>
