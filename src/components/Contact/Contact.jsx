@@ -1,9 +1,27 @@
 import { useState } from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import {useForm} from "react-hook-form";
 import "./ContactStyle.css";
 import "./TerminosyCondiciones";
 
+
+
 function Contact ()  {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {        
+
+    console.log("enviando email");
+
+    emailjs.sendForm('service_rqie7fl', 'template_g5e7uie', form.current, 'bpAtvu5HoUkk88R-t')
+      .then((result) => {
+          console.log("email sent:", result.text);
+      }, (error) => {
+          console.log("Error sending email", error.text);
+      });    
+  }
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -11,6 +29,7 @@ function Contact ()  {
   const [phone, setPhone] = useState("");
   const [contactMethod, setContactMethod] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [message, setMessage] = useState("");
 
 
   const messages = {
@@ -35,24 +54,43 @@ function Contact ()  {
 
     };
 
-    const isFormValid =
-    name !== "" &&
-    surname !== "" &&
-    email !== "" &&
-    phone !== "" &&
-    contactMethod !== "" &&
-    termsAccepted &&
-    patterns.name.test(name) &&
-  patterns.email.test(email) &&
-  patterns.phone.test(phone);
+    const isFormValid = () => {
+      return (
+        name !== "" &&
+        surname !== "" &&
+        email !== "" &&
+        phone !== "" &&
+        contactMethod !== "" &&
+        termsAccepted &&
+        patterns.name.test(name) &&
+        patterns.email.test(email) &&
+        patterns.phone.test(phone)
+      );
+    };
  
-  const submitForm = (ev) => {
+
+    const submitForm = (ev) => {      
     ev.preventDefault();
-        if (isFormValid) {
-    } else {
-      alert("Por favor, completa todos los campos correctamente antes de enviar.");
+    console.log("Estoy en la funcion despues del preventdefault")
+      
+      
+      if (isFormValid() && contactMethod === "email") {    
+        console.log("condiciones cumplidas")    
+          sendEmail();          
+          handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
+          setMessage("Mensaje enviado con éxito, ¡Recibirá una notificación en su email!");         
+      }else if (isFormValid()) {
+        console.log("condiciones cumplidas sin email")
+        handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
+        setMessage("Mensaje enviado con éxito!");
+      } else {
+        setMessage("Debes rellenar los campos con información correcta");
+      }
+
     }
- };
+ 
+  
+
 
 
     return (
@@ -61,7 +99,7 @@ function Contact ()  {
         <div className="Title">
           <h1>CONTACTA CON NOSOTROS</h1>
         </div>
-        <form className="form" onSubmit={submitForm}>
+        <form className="form" ref={form} onSubmit={submitForm}>
         <div className="main-container">
           <div className="container-details">
             <label>
@@ -80,7 +118,7 @@ function Contact ()  {
               Apellidos:{" "}
               <input
                 type="text"
-                name="nombre"
+                name="surname"
                 value={surname}
                 onChange={(e) => setSurname(e.target.value)}
                 placeholder="Madrigal"
@@ -117,7 +155,7 @@ function Contact ()  {
             )}
             </label>
             <label>Escriba su mensaje</label>
-      <textarea maxlength="300" name="message" />
+      <textarea maxLength="300" name="message" />
           </div>
 
           <div className="container-radios">
@@ -127,6 +165,7 @@ function Contact ()  {
                 type="radio"
                 name="btnRadio"
                 value="teléfono"
+                checked={contactMethod === "teléfono"}
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
@@ -137,6 +176,7 @@ function Contact ()  {
                 type="radio"
                 name="btnRadio"
                 value="email"
+                checked={contactMethod === "email"}
                 onChange={() => setContactMethod("email")}
                 required
               />
@@ -147,6 +187,7 @@ function Contact ()  {
                 type="radio"
                 name="btnRadio"
                 value="none"
+                checked={contactMethod === "none"}
                 onChange={() => setContactMethod("none")}
                 required
               />
@@ -172,14 +213,14 @@ function Contact ()  {
             <button
               className="btn"
               type="submit"
-              value="send"
-              disabled={!isFormValid && !termsAccepted}
-              onClick={()=> isFormValid ?
-      alert("Formulario enviado!") : alert("Por favor, completa todos los campos y acepta los términos y condiciones antes de enviar.")}
-              onMouseUp={handlerReset}>
-             Enviar
+              disabled={!termsAccepted}
+              onClick={(ev) => {setMessage(""); submitForm(ev);}}>
+                Enviar
             </button>
           </div>
+          <p style={{ color: message.startsWith('Debes') ? 'red' : 'green' }}>
+          {message}
+        </p>
         </div>
         </form>
       </>
