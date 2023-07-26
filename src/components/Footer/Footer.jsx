@@ -47,7 +47,7 @@ const Footer = () => {
       <a href="#"><img className="footer_img" src={social2} alt=""></img></a>
       <a href="#"><img className="footer_img" src={social3} alt=""></img></a>
       <p>
-        ©2023 Gonzalo Cano | Lorena Cobo | Zorahida Domínguez | Lorena Cobo |
+        ©2023 Gonzalo Cano | Lorena Cobo | Zorahida Domínguez  |
         Augusto Suñen | Andreu Rodríguez | All Rights Reserved
       </p>
     </nav>

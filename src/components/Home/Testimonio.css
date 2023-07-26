@@ -1,12 +1,13 @@
 .contenedor-testimonio{
-    width: 1170px;
-    height: 368px;
+    width: 870px;
+    height: 200px;
     margin: 10px 10px 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: antiquewhite;
-    box-shadow: 0 3px 13px 1px black (0,0,0 / 9%);
+    background-color: rgb(78, 138, 141);
+    box-shadow: 0 3px 13px 1px rgb(134, 132, 132) (0,0,0 / 9%);
+    
 
 }
 

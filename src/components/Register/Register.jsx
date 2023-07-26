@@ -1,14 +1,18 @@
 import React from "react";
 import {useForm} from 'react-hook-form'
+import { useState } from "react";
 import './Register.css'
-//import axios from 'axios'
+import axios from 'axios'
+import "../Contact/TerminosyCondiciones"
 
 const Register = () => {
+  const [termsAccepted, setTermsAccepted] = useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm()
+    const[formularioValido,cambiarFormularioValido] = useState(null);
 
     const result = async (data) => {
         console.log(data)
-       // const res = await axios (??????????????????)
+        const res = await axios.post ('https://proyect-back-final1.vercel.app/newUser')
 
     }
   return (
@@ -51,9 +55,26 @@ const Register = () => {
         }
       })}/>
       {errors.Contraseña && <p>{errors.Contraseña.message}</p>}
+
+      <div className="container-terms">
+            <label>
+            <a href="https://www.upgrade-hub.com/privacidad/">Acepto los términos y condiciones{""}</a> 
+
+              <input
+                type="checkbox"
+                name="terminosCheckbox"
+                checked={termsAccepted}
+                onChange={() => setTermsAccepted(!termsAccepted)}
+                required
+              />
+            </label>
+          </div>
       
+      <div className="BotonRegistrar">
       <button className='submit'>Registrar</button>
-      
+      {Register === true &&<p>Gracias por Registrase!!</p>}
+
+      </div>
 
       </form>
     </div>  
