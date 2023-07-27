@@ -1,5 +1,7 @@
 import "./personalArea.css";
 
+const userImg = require("../../assets/images/pngwing.com.png")
+
 const PersonalArea = ({ user }) => {
   //let imc = user.peso/pow(user.altura/100,2);
   //La función Math.round sirve para redondear valores
@@ -27,18 +29,19 @@ const PersonalArea = ({ user }) => {
     <>
       <div className="container-profile">
       <div className="container">
-      <h1>Bienvenido, {user.nombre}</h1>
+      <h1 className="profile_title">Bienvenido, {user.nombre}</h1>
         <h2>Datos Personales</h2>
         <ul>
-          <li>Nombre de usuario: {user.username}</li>
-          <li>Email: {user.correo}</li>
-          <li>Nombre: {user.nombre}</li>
-          <li>Edad: {user.edad} años</li>
-          <li>Género: {user.genero}</li>
-          <li>Peso: {user.peso} kg</li>
-          <li>Altura: {user.altura} cm</li>
-          <li>Objetivo a alcanzar: {user.objetivo} kg</li>
-          <li>Tu Indice de Masa Corporal es: {respuesta}</li>
+        <img className="user_img" src={userImg} alt="user"/>
+          <li><strong>Nombre de usuario:</strong> {user.username}</li>
+          <li><strong>Email:</strong> {user.correo}</li>
+          <li><strong>Nombre:</strong> {user.nombre}</li>
+          <li><strong>Edad:</strong> {user.edad} años</li>
+          <li><strong>Género:</strong> {user.genero}</li>
+          <li><strong>Peso:</strong> {user.peso} kg</li>
+          <li><strong>Altura:</strong> {user.altura} cm</li>
+          <li><strong>Objetivo a alcanzar:</strong> {user.objetivo} kg</li>
+          <li><strong>Tu Indice de Masa Corporal es:</strong> {respuesta}</li>
         </ul>
         <p>Aquí podrás encontrar tus datos personales,</p>
         <p>que iremos modificando en base a tus progresos</p>
