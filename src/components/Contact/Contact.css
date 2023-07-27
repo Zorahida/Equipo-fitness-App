@@ -4,6 +4,7 @@
   align-items: center;
   text-align: center;
   margin-top: 10%;
+  
   @media (max-width: 768px) {
     margin-top: 30%;
   }
@@ -40,6 +41,14 @@
 .contact_form {
   display: flex;
   justify-content: center;
+  margin-bottom: 3%;
+  @media (max-width: 913px) {
+    margin-top: 8%;
+    margin-bottom: 42%
+  };
+  @media (max-width: 821px) {
+    margin-bottom: 26%
+  };  
 }
 
 .container-details {
