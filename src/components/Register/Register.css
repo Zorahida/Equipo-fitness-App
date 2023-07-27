@@ -11,6 +11,14 @@
   flex-direction: column;
   justify-content: center;
   width: 60%;
+  @media (max-width: 913px) {
+    padding-top: 35%;
+    padding-bottom: 18%
+  }
+  @media (max-width: 821px) {
+    padding-top: 30%;
+    padding-bottom: 10%
+  }
   @media (max-width: 800px) {
     padding-top: 30%;
   }
