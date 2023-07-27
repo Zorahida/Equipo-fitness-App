@@ -26,10 +26,10 @@ const Login = ({ loginUser, loginError }) => {
 
   return (
     <>
-      <div className="title-login">
-        <h1>Iniciar sesión</h1>
-      </div>
       <div className="container-login">
+        <div className="title-login">
+          <h1>Iniciar sesión</h1>
+        </div>
         <div className="body-login">
           <form className="form-login" onSubmit={submitForm}>
             <label htmlFor="correo">{/*Email*/}</label>

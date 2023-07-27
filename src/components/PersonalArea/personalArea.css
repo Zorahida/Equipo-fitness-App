@@ -1,16 +1,57 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .container-profile {
-    margin-top: 4%;
-    background-color: darkkhaki;
-    margin-left: 30%;
-    max-width: 43%;
-    border-radius: 49px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10%;
+  @media (max-width: 768px) {
+    padding-top: 40%;
+  }
+  @media (max-width: 420px) {
+    padding-top: 50%;
+  }
+  @media (max-width: 350px) {
+    padding-top: 65%;
+  }
 }
 
 .container {
-    margin-left: 3%;
+  display: inline-block;
+  padding: 10%;
+  background-color: cornsilk;
+  width: 70%;
+  border: 1px solid gray;
+  border-radius: 49px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  transition: all 0.6s ease;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+.container:hover {
+  box-shadow: rgba(255, 172, 28, 0.199) -10px 10px,
+    rgba(255, 172, 28, 0.19) -20px 20px;
+}
+
+.user_img {
+  width: 30%;
+  margin: 20px 0;
+}
+
+.profile_title {
+  margin-bottom: 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }

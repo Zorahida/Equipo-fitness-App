@@ -1,6 +1,5 @@
 .about_container {
   padding: 10% 15% 0 15%;
-  padding: -50px;
   @media (max-width: 768px) {
     padding-top: 40%;
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
 import "../TerminosyCondiciones/TerminosyCondiciones";
@@ -25,7 +26,7 @@ const Register = () => {
     const res = await axios.post(      
       "https://proyect-back-final-olive.vercel.app/usuariosBase/newUser");
       console.log("Response:", res.data);
-    } catch (error){
+    } catch (error) {
       console.error("Error ocurred:", error.message);
     }
   };
@@ -136,12 +137,9 @@ const Register = () => {
 
           <div className="container-terms">
             <label className="terms_label">
-              <a
-                className="register_terms"
-                href="https://www.upgrade-hub.com/privacidad/"
-              >
-                Acepto los términos y condiciones{""}
-              </a>
+              <Link className="register_terms" to="/terminosycondiciones">
+                Acepto los términos y condiciones
+              </Link>
             </label>
 
             <input

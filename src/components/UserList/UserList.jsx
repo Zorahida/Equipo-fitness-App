@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserModify from "./UserModify";
 import { StrictMode } from "react";
+import "./UserList.css";
 
 function UserList() {
   const [listUser, setUser] = useState([]);
@@ -62,21 +63,32 @@ function UserList() {
   const renderUser = () => {
     return listUser.map((usuario) => (
       <>
-        <div key={usuario.id}>
+        <div className="container_user_list" key={usuario.id}>
           {isEditing && (
             <UserModify usuarioId={editingUserId} updateUser={updateUser} />
           )}
-          <h4> {usuario.username}</h4>
-          <ul>
-            <li>{usuario._id}</li>
-            <li>{usuario.nombre}</li>
-            <li>{usuario.correo}</li>
-            <li>{usuario.peso}</li>
-            <button>
-              <Link to={`/UserModify/${usuario._id}`}>Modificar</Link>
-            </button>
-            <br />
-            <button onClick={() => deleteUser(usuario._id)}>
+          <h4 className="name"> {usuario.username}</h4>
+          <ul className="user_list">
+            <li>
+              <strong>Id: </strong>
+              {usuario._id}
+            </li>
+            <li>
+              <strong>Nombre: </strong>
+              {usuario.nombre}
+            </li>
+            <li>
+              <strong>Correo: </strong>
+              {usuario.correo}
+            </li>
+            <li>
+              <strong>Peso: </strong>
+              {usuario.peso}
+            </li>
+            <button
+              className="button_delete"
+              onClick={() => deleteUser(usuario._id)}
+            >
               Eliminar Usuario
             </button>
           </ul>
@@ -85,7 +97,7 @@ function UserList() {
     ));
   };
 
-  return renderUser();
+  return <section className="section_users">{renderUser()}</section>;
 }
 
 export default UserList;

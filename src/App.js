@@ -69,58 +69,70 @@ function App() {
 
   return (
     <>
-        <div className={theme ? "dark" : "light"}>
-          <color.Provider value={theme}>
-        <NavBar theme={theme} user={user} logoutUser={logoutUser} />
-        <contextUse.Provider value={user}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/training"
-              element={<TrainingList trainings={trainings} />}
-            />
-            <Route path="/register" element={<Register />} />
-            <Route
-              path="/login"
-              element={<Login loginUser={loginUser} loginError={loginError} />}
-            />
-            <Route
-              path="/profile"
-              element={
-                <AuthRoute
-                  user={user}
-                  component={<PersonalArea user={user} />}
-                />
-              }
-            />
-            <Route path="/userList" element={
-                <AdminRoute
-                  user={user}
-                  component={<UserList user={user} />}
-                />
-              }
-            />
-            <Route path="UserModify/:usuario.Id" element={
-                <AdminRoute
-                  user={user}
-                  component={<UserModify user={user} />}
-                />
-              }
-            />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/terminosycondiciones" element={<Terminos />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <div className="toggle_container">
-          <Toggle
-          checked={theme}
-          onChange={({ target }) => setTheme(target.checked)}
-          icons={{ checked: "🔆", unchecked: "🌙" }}
-          aria-label="Dark mode toggle"
-        />{theme ? <p className="modo_text">Modo Dia</p> : <p className="modo_text">Modo Noche</p>}</div>
-        <Footer />
-        </contextUse.Provider>
+      <div className={theme ? "dark" : "light"}>
+        <color.Provider value={theme}>
+          <NavBar theme={theme} user={user} logoutUser={logoutUser} />
+          <contextUse.Provider value={user}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/training"
+                element={<TrainingList trainings={trainings} />}
+              />
+              <Route path="/register" element={<Register />} />
+              <Route
+                path="/login"
+                element={
+                  <Login loginUser={loginUser} loginError={loginError} />
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <AuthRoute
+                    user={user}
+                    component={<PersonalArea user={user} />}
+                  />
+                }
+              />
+              <Route
+                path="/userList"
+                element={
+                  <AdminRoute
+                    user={user}
+                    component={<UserList user={user} />}
+                  />
+                }
+              />
+              <Route
+                path="UserModify/:usuario.Id"
+                element={
+                  <AdminRoute
+                    user={user}
+                    component={<UserModify user={user} />}
+                  />
+                }
+              />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/terminosycondiciones" element={<Terminos />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <div className="toggle_container">
+              <Toggle
+                checked={theme}
+                onChange={({ target }) => setTheme(target.checked)}
+                icons={{ checked: "🔆", unchecked: "🌙" }}
+                aria-label="Dark mode toggle"
+              />
+              {theme ? (
+                <p className="modo_text">Modo Dia</p>
+              ) : (
+                <p className="modo_text">Modo Noche</p>
+              )}
+            </div>
+            <Footer />
+          </contextUse.Provider>
         </color.Provider>
       </div>
     </>
