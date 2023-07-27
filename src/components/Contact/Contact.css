@@ -42,11 +42,11 @@
   margin-bottom: 3%;
   @media (max-width: 913px) {
     margin-top: 8%;
-    margin-bottom: 42%
-  };
+    margin-bottom: 42%;
+  }
   @media (max-width: 821px) {
-    margin-bottom: 26%
-  };  
+    margin-bottom: 26%;
+  }
 }
 
 .container-details {
@@ -138,9 +138,9 @@
   padding: 15px;
   @media (max-width: 768px) {
     font-size: 9px;
-  }@media (max-width: 400px) {
+  }
+  @media (max-width: 400px) {
     font-size: 6px;
-
   }
 }
 

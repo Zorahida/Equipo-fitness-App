@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
-// const logo = require("")
 const social1 = require("../../assets/images/instagram.png");
 const social2 = require("../../assets/images/facebook-icon-white-png-1200x1200.png");
 const social3 = require("../../assets/images/twitter.png");
@@ -10,11 +9,6 @@ const Footer = () => {
   return (
     <nav className="footer_nav">
       <ul className="footer_list">
-        {/* <li className="footer_list_element">
-          <Link to="/">
-          <img className="footer_img" src={logo} alt="" />
-          </Link>
-        </li> */}
         <li>
           <Link className="footer_list_element" to="/">
             Inicio

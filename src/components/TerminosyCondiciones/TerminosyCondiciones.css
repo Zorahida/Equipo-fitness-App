@@ -1,12 +1,12 @@
-.section_terms{
-    padding: 10%;
-    @media(max-width: 768px){
-        padding-top: 35%;
-    }
-    @media(max-width: 568px){
-        padding-top: 50%;
-    }
-    @media(max-width: 350px){
-        padding-top: 60%;
-    }
+.section_terms {
+  padding: 10%;
+  @media (max-width: 768px) {
+    padding-top: 35%;
+  }
+  @media (max-width: 568px) {
+    padding-top: 50%;
+  }
+  @media (max-width: 350px) {
+    padding-top: 60%;
+  }
 }

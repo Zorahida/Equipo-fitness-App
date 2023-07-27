@@ -17,11 +17,12 @@ const Register = () => {
 
   const result = async (data) => {
     console.log(data);
-    try{
-    const res = await axios(
-      "https://proyect-back-final-olive.vercel.app/newUser");
+    try {
+      const res = await axios(
+        "https://proyect-back-final-olive.vercel.app/newUser"
+      );
       console.log("Response:", res.data);
-    } catch (error){
+    } catch (error) {
       console.error("Error ocurred:", error.message);
     }
   };
@@ -92,7 +93,9 @@ const Register = () => {
 
           <div className="container-terms">
             <label className="terms_label">
-            <Link className="register_terms" to="/terminosycondiciones">Acepto los términos y condiciones</Link>
+              <Link className="register_terms" to="/terminosycondiciones">
+                Acepto los términos y condiciones
+              </Link>
             </label>
 
             <input

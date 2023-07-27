@@ -5,9 +5,9 @@ const logo = require("../../assets/images/logoOficial.png");
 
 const NavBar = ({ user, logoutUser, theme }) => {
   return (
-    <nav >
+    <nav>
       <div className="container-nav">
-        <ul className={theme ? "menu_nav_dark" : "menu_nav"} >
+        <ul className={theme ? "menu_nav_dark" : "menu_nav"}>
           <img className="logo" src={logo} alt="logo"></img>
           <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/">Inicio</Link>

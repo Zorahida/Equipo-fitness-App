@@ -22,7 +22,7 @@
 .container {
   display: inline-block;
   padding: 10%;
-  background-color:cornsilk;
+  background-color: cornsilk;
   width: 70%;
   border: 1px solid gray;
   border-radius: 49px;
@@ -51,7 +51,7 @@
   margin-bottom: 20px;
 }
 
-ul{
-    margin: 0;
-    padding: 0;
+ul {
+  margin: 0;
+  padding: 0;
 }

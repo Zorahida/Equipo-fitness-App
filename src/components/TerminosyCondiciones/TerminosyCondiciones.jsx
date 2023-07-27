@@ -1,4 +1,4 @@
-import "./TerminosyCondiciones.css"
+import "./TerminosyCondiciones.css";
 
 function Terminos() {
   return (
