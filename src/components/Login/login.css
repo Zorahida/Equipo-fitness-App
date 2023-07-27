@@ -8,15 +8,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 10%;
+  padding-top: 10%;
   @media (max-width: 980px) {
-    margin-top: 15%;
+    padding-top: 15%;
   }
   @media (max-width: 800px) {
-    margin-top: 30%;
+    padding-top: 30%;
   }
   @media (max-width: 564px) {
-    margin-top: 48%;
+    padding-top: 48%;
   }
   @media (max-width: 300px) {
     margin-top: 60%;

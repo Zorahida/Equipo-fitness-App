@@ -69,19 +69,9 @@ function App() {
 
   return (
     <>
-      <div>
-        {/* <Toggle
-          checked={theme}
-          onChange={({ target }) => setTheme(target.checked)}
-          icons={{ checked: "🔆", unchecked: "🌙" }}
-          aria-label="Dark mode toggle"
-        />
         <div className={theme ? "light" : "dark"}>
-          <color.Provider value={theme}> */}
-        {/* <>
-        <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
-        <NavBar user={user} logoutUser={logoutUser} />
+          <color.Provider value={theme}>
+        <NavBar theme={theme} user={user} logoutUser={logoutUser} />
         <contextUse.Provider value={user}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -122,8 +112,16 @@ function App() {
             <Route path="/terminosycondiciones" element={<Terminos />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </contextUse.Provider>
+          <div className="toggle_container">
+          <Toggle
+          checked={theme}
+          onChange={({ target }) => setTheme(target.checked)}
+          icons={{ checked: "🔆", unchecked: "🌙" }}
+          aria-label="Dark mode toggle"
+        />{theme ? <p className="modo_text">Modo Noche</p> : <p className="modo_text">Modo Dia</p>}</div>
         <Footer />
+        </contextUse.Provider>
+        </color.Provider>
       </div>
     </>
   );

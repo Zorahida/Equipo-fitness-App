@@ -44,6 +44,13 @@
   padding: 20px;
 }
 
+.list-nav_dark > a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  text-shadow: 1px 1px 3px black;
+}
+
 .list-nav > a:hover {
   text-decoration: none;
   color: darkgoldenrod;
@@ -63,7 +70,13 @@
   }
 }
 
+
 .login:hover {
+  background-color: darkkhaki;
+  color: black;
+}
+
+.login_dark:hover {
   background-color: darkkhaki;
   color: black;
 }
@@ -74,4 +87,36 @@
   border: 1px solid darkgoldenrod;
   padding: 5px;
   border-radius: 10px;
+}
+
+.login_dark {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  text-decoration: none;
+  border: 1px solid darkgoldenrod;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.menu_nav_dark {
+  display: flex;
+  font-size: 12px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 10px;
+  background-color: grey;
+  width: 100%;
+  border-bottom: 1px solid darkgoldenrod;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  @media (max-width: 950px) {
+    font-size: 8px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    font-size: 10px;
+  }
 }

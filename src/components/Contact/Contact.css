@@ -3,15 +3,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 10%;
+  padding-top: 10%;
   @media (max-width: 768px) {
-    margin-top: 30%;
+    padding-top: 30%;
   }
   @media (max-width: 564px) {
-    margin-top: 40%;
+    padding-top: 40%;
   }
   @media (max-width: 350px) {
-    margin-top: 60%;
+    padding-top: 60%;
   }
 }
 
@@ -57,6 +57,7 @@
 .container-terms {
   width: 100%;
   text-align: center;
+  margin-top: 30px;
 }
 
 .button {
@@ -72,6 +73,7 @@
   font-weight: 600;
   margin: 15px;
   padding: 10px;
+  margin-top: 50px;
 }
 
 .button:disabled {
@@ -83,7 +85,8 @@
   color: darkgoldenrod;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 15px 0;
+  margin-top: 50px;
 }
 
 .button:hover {
@@ -119,7 +122,13 @@
 }
 
 .contact_terms {
+  background-color: white;
   color: darkgoldenrod;
+  width: 50%;
+  border-radius: 30px;
+  opacity: 0.7;
+  margin: 10px;
+  padding: 20px;
 }
 
 .success {

@@ -16,6 +16,7 @@
   transition: all 0.6s ease;
 }
 
+
 .contenedor-testimonio:hover {
   box-shadow: rgba(255, 172, 28, 0.199) -10px 10px,
     rgba(255, 172, 28, 0.19) -20px 20px;

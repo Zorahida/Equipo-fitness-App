@@ -1,8 +1,8 @@
 .about_container {
-  margin: 10% 15% 0 15%;
+  padding: 10% 15% 0 15%;
   padding: -50px;
   @media (max-width: 768px) {
-    margin-top: 40%;
+    padding-top: 40%;
   }
 }
 
