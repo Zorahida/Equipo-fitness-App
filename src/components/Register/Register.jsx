@@ -16,9 +16,13 @@ const Register = () => {
 
   const result = async (data) => {
     console.log(data);
-    const res = await axios.post(
-      "https://proyect-back-final1.vercel.app/newUser"
-    );
+    try{
+    const res = await axios(
+      "https://proyect-back-final-olive.vercel.app/newUser");
+      console.log("Response:", res.data);
+    } catch (error){
+      console.error("Error ocurred:", error.message);
+    }
   };
   return (
     <>
