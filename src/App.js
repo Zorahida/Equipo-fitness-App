@@ -19,7 +19,7 @@ import React from "react";
 import UserList from "./components/UserList/UserList";
 import UserModify from "./components/UserList/UserModify";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
-
+import AdminRoute from "./components/Admin/AdminRoute";
 
 function App() {
   const navigate = useNavigate();
@@ -103,15 +103,15 @@ function App() {
                 />
               }
             />
-            <Route path="/admin/userList" element={
-                <AuthRoute
+            <Route path="/userList" element={
+                <AdminRoute
                   user={user}
                   component={<UserList user={user} />}
                 />
               }
             />
-            <Route path="admin/UserModify/:usuario.Id" element={
-                <AuthRoute
+            <Route path="UserModify/:usuario.Id" element={
+                <AdminRoute
                   user={user}
                   component={<UserModify user={user} />}
                 />

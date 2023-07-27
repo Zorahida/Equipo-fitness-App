@@ -41,7 +41,7 @@ const Footer = () => {
           </Link>
         </li>
         <li>
-          <Link className="footer_list_element" to="admin/userList">
+          <Link className="footer_list_element" to="/userList">
             Lista de usuarios
           </Link>
         </li>

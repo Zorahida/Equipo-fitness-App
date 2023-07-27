@@ -1,3 +1,5 @@
+import "./personalArea.css";
+
 const PersonalArea = ({ user }) => {
   //let imc = user.peso/pow(user.altura/100,2);
   //La función Math.round sirve para redondear valores
@@ -23,8 +25,9 @@ const PersonalArea = ({ user }) => {
 
   return (
     <>
-      <div>
-        <h1>Datos personales</h1>
+      <div className="container-profile">
+      <h1>Bienvenido, {user.nombre}</h1>
+        <h2>Datos Personales</h2>
         <ul>
           <li>Nombre de usuario: {user.username}</li>
           <li>Email: {user.correo}</li>
@@ -36,6 +39,8 @@ const PersonalArea = ({ user }) => {
           <li>Objetivo a alcanzar: {user.objetivo} kg</li>
           <li>Tu Indice de Masa Corporal es: {respuesta}</li>
         </ul>
+        <p>Aquí podrás encontrar tus datos personales,</p>
+        <p>que iremos modificando en base a tus progresos</p>
       </div>
     </>
   );
