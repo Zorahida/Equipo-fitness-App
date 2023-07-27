@@ -1,0 +1,12 @@
+.section_terms{
+    padding: 5% 10%;
+    @media(max-width: 980px){
+        padding-top: 15%;
+    }
+    @media(max-width: 768px){
+        padding-top: 40%;
+    }
+    @media(max-width: 350px){
+        padding-top: 60%;
+    }
+}

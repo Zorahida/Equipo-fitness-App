@@ -1,0 +1,102 @@
+.section_users {
+  padding-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width: 768px) {
+    padding-top: 30%;
+  }
+  @media (max-width: 550px) {
+    padding-top: 50%;
+  }
+  @media (max-width: 350px) {
+    padding-top: 60%;
+  }
+}
+
+.container_user_list {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2%;
+  margin: 10px;
+  width: 40%;
+  list-style: none;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  transition: all 0.6s ease;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
+  @media (max-width: 350px) {
+    font-size: 6px;
+  }
+}
+
+.container_user_list:hover {
+  box-shadow: rgba(255, 172, 28, 0.199) -10px 10px,
+    rgba(255, 172, 28, 0.19) -20px 20px;
+}
+
+.user_list {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+.name {
+  margin: auto;
+  padding: 1%;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+  @media (max-width: 350px) {
+    font-size: 8px;
+  }
+}
+
+.button_modify {
+  padding: 2%;
+  font-size: 12px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  background: darkgoldenrod;
+
+  text-transform: capitalize;
+  margin: 2% 0;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
+  @media (max-width: 350px) {
+    font-size: 6px;
+  }
+}
+
+.modify_link {
+  color: white;
+  text-decoration: none;
+}
+
+.button_delete {
+  padding: 2%;
+  font-size: 12px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  background: darkgoldenrod;
+  color: white;
+  text-transform: capitalize;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
+  @media (max-width: 350px) {
+    font-size: 6px;
+  }
+}

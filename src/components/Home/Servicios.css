@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: cornsilk;
+  background-color:cornsilk;
   color: black;
   box-shadow: inset;
   width: 100%;
@@ -29,8 +29,8 @@
 .nombre-servicio {
   font-size: 30px;
   font-weight: bold;
-  color: white;
-  text-shadow: 1px 1px 3px black;
+  color: black;
+  text-shadow: 1.5px 1.5px 3px grey;
   @media (max-width: 768px) {
     margin: auto;
     text-align: center;
