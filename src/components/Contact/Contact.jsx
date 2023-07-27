@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import "./Contact.css";
+import { Link } from "react-router-dom";
 import "../TerminosyCondiciones/TerminosyCondiciones";
 
 function Contact() {
@@ -210,15 +211,7 @@ function Contact() {
           </div>
 
           <div className="container-terms">
-            <label>
-              <a
-                className="contact_terms"
-                href="https://www.upgrade-hub.com/privacidad/"
-              >
-                Acepto los términos y condiciones{""}
-              </a>
-            </label>
-
+            <Link to="/terminosycondiciones">Acepto los términos y condiciones</Link>
             <input
               className="input_radio"
               type="checkbox"
