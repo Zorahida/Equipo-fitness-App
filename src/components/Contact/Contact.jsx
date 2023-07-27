@@ -29,7 +29,7 @@ function Contact ()  {
   const [phone, setPhone] = useState("");
   const [contactMethod, setContactMethod] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [message, setMessage] = useState("");
+  const [messagecondition, setMessagecondition] = useState("");
 
 
   const messages = {
@@ -78,13 +78,13 @@ function Contact ()  {
         console.log("condiciones cumplidas")    
           sendEmail();          
           handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
-          setMessage("Mensaje enviado con éxito, ¡Recibirá una notificación en su email!");         
+          setMessagecondition("Mensaje enviado con éxito, ¡Recibirá una notificación en su email!");         
       }else if (isFormValid()) {
         console.log("condiciones cumplidas sin email")
         handlerReset(); // Restablecer campos después de enviar el formulario exitosamente
-        setMessage("Mensaje enviado con éxito!");
+        setMessagecondition("Mensaje enviado con éxito!");
       } else {
-        setMessage("Debes rellenar los campos con información correcta");
+        setMessagecondition("Debes rellenar los campos con información correcta");
       }
 
     }
@@ -214,12 +214,12 @@ function Contact ()  {
               className="btn"
               type="submit"
               disabled={!termsAccepted}
-              onClick={(ev) => {setMessage(""); submitForm(ev);}}>
+              onClick={(ev) => {setMessagecondition(""); submitForm(ev);}}>
                 Enviar
             </button>
           </div>
-          <p style={{ color: message.startsWith('Debes') ? 'red' : 'green' }}>
-          {message}
+          <p style={{ color: messagecondition.startsWith('Debes') ? 'red' : 'green' }}>
+          {messagecondition}
         </p>
         </div>
         </form>
