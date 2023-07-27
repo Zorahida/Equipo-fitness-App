@@ -20,6 +20,7 @@ import UserList from "./components/UserList/UserList";
 import UserModify from "./components/UserList/UserModify";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
 
+
 function App() {
   const navigate = useNavigate();
 
@@ -102,8 +103,20 @@ function App() {
                 />
               }
             />
-            <Route path="/userList" element={<UserList />} />
-            <Route path="/UserModify/:usuario.Id" element={<UserModify />} />
+            <Route path="/admin/userList" element={
+                <AuthRoute
+                  user={user}
+                  component={<UserList user={user} />}
+                />
+              }
+            />
+            <Route path="admin/UserModify/:usuario.Id" element={
+                <AuthRoute
+                  user={user}
+                  component={<UserModify user={user} />}
+                />
+              }
+            />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/terminosycondiciones" element={<Terminos />} />
