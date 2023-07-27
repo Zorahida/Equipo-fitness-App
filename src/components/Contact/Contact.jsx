@@ -211,7 +211,9 @@ function Contact() {
           </div>
 
           <div className="container-terms">
-            <Link to="/terminosycondiciones">Acepto los términos y condiciones</Link>
+            <label>
+            <Link className="contact_terms" to="/terminosycondiciones">Acepto los términos y condiciones</Link>
+            </label>
             <input
               className="input_radio"
               type="checkbox"

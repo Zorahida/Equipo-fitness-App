@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
 import "../TerminosyCondiciones/TerminosyCondiciones";
@@ -91,12 +92,7 @@ const Register = () => {
 
           <div className="container-terms">
             <label className="terms_label">
-              <a
-                className="register_terms"
-                href="https://www.upgrade-hub.com/privacidad/"
-              >
-                Acepto los términos y condiciones{""}
-              </a>
+            <Link className="register_terms" to="/terminosycondiciones">Acepto los términos y condiciones</Link>
             </label>
 
             <input
