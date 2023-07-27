@@ -26,13 +26,14 @@ const PersonalArea = ({ user }) => {
   return (
     <>
       <div className="container-profile">
+      <div className="container">
       <h1>Bienvenido, {user.nombre}</h1>
         <h2>Datos Personales</h2>
         <ul>
           <li>Nombre de usuario: {user.username}</li>
           <li>Email: {user.correo}</li>
           <li>Nombre: {user.nombre}</li>
-          <li>Edad: {user.edad}</li>
+          <li>Edad: {user.edad} años</li>
           <li>Género: {user.genero}</li>
           <li>Peso: {user.peso} kg</li>
           <li>Altura: {user.altura} cm</li>
@@ -41,6 +42,7 @@ const PersonalArea = ({ user }) => {
         </ul>
         <p>Aquí podrás encontrar tus datos personales,</p>
         <p>que iremos modificando en base a tus progresos</p>
+      </div>
       </div>
     </>
   );
