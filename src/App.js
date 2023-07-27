@@ -69,7 +69,7 @@ function App() {
 
   return (
     <>
-        <div className={theme ? "light" : "dark"}>
+        <div className={theme ? "dark" : "light"}>
           <color.Provider value={theme}>
         <NavBar theme={theme} user={user} logoutUser={logoutUser} />
         <contextUse.Provider value={user}>
@@ -118,7 +118,7 @@ function App() {
           onChange={({ target }) => setTheme(target.checked)}
           icons={{ checked: "🔆", unchecked: "🌙" }}
           aria-label="Dark mode toggle"
-        />{theme ? <p className="modo_text">Modo Noche</p> : <p className="modo_text">Modo Dia</p>}</div>
+        />{theme ? <p className="modo_text">Modo Dia</p> : <p className="modo_text">Modo Noche</p>}</div>
         <Footer />
         </contextUse.Provider>
         </color.Provider>

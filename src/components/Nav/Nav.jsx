@@ -7,24 +7,24 @@ const NavBar = ({ user, logoutUser, theme }) => {
   return (
     <nav >
       <div className="container-nav">
-        <ul className={theme ? "menu_nav" : "menu_nav_dark"} >
+        <ul className={theme ? "menu_nav_dark" : "menu_nav"} >
           <img className="logo" src={logo} alt="logo"></img>
-          <li className={theme ? "list-nav" : "list-nav_dark"}>
+          <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/">Inicio</Link>
           </li>
-          <li className={theme ? "list-nav" : "list-nav_dark"}>
+          <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/training">Listado de entrenamientos</Link>
           </li>
-          <li className={theme ? "list-nav" : "list-nav_dark"}>
+          <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/register">Registro</Link>
           </li>
-          <li className={theme ? "list-nav" : "list-nav_dark"}>
+          <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/profile">Área personal</Link>
           </li>
-          <li className={theme ? "list-nav" : "list-nav_dark"}>
+          <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/contact">Contacto</Link>
           </li>
-          <li className={theme ? "list-nav" : "list-nav_dark"}>
+          <li className={theme ? "list-nav_dark" : "list-nav"}>
             <Link to="/about">Acerca de nosotros</Link>
           </li>
           <li className="list-nav-login">
@@ -33,7 +33,7 @@ const NavBar = ({ user, logoutUser, theme }) => {
                 Cerrar sesión
               </button>
             ) : (
-              <Link className={theme ? "login" : "login_dark"} to="/login">
+              <Link className={theme ? "login_dark" : "login"} to="/login">
                 Iniciar sesión
               </Link>
             )}
