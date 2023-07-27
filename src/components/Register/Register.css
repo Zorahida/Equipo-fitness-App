@@ -4,18 +4,21 @@
 }
 
 .plantilla-register {
-  margin: 10% 20%;
+  padding-top: 10%;
+  padding-bottom: 3%;
+  margin:auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 60%;
   @media (max-width: 800px) {
-    margin-top: 30%;
+    padding-top: 30%;
   }
   @media (max-width: 564px) {
-    margin-top: 60%;
+    padding-top: 60%;
   }
   @media (max-width: 350px) {
-    margin-top: 60%;
+    padding-top: 60%;
   }
 }
 .register_form {
@@ -71,5 +74,10 @@
 }
 
 .terms_label {
-  width: 80%;
+  width: 50%;
+  background-color: white;
+  border-radius: 15px;
+  opacity: 0.7;
+  margin: 5px;
+  padding: 5px;
 }

@@ -3,9 +3,9 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 45%));
   grid-gap: 50px;
   justify-content: center;
-  margin-top: 10%;
+  padding-top: 10%;
   @media (max-width: 768px) {
-    margin-top: 40%;
+    padding-top: 40%;
   }
 }
 
