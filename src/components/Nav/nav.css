@@ -34,7 +34,7 @@
   }
   @media (max-width: 768px) {
     flex-direction: column;
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -53,4 +53,25 @@
   width: 50px;
   border-radius: 60px;
   margin: 5px;
+}
+
+.list-nav-login {
+  text-decoration: none;
+  color: darkgoldenrod;
+  @media (max-width: 768px) {
+    margin-top: 7px;
+  }
+}
+
+.login:hover {
+  background-color: darkkhaki;
+  color: black;
+}
+
+.login {
+  color: darkgoldenrod;
+  text-decoration: none;
+  border: 1px solid darkgoldenrod;
+  padding: 5px;
+  border-radius: 10px;
 }

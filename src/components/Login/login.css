@@ -9,25 +9,37 @@
   align-items: center;
   text-align: center;
   margin-top: 10%;
-  @media (max-width: 668px) {
+  @media (max-width: 980px) {
+    margin-top: 15%;
+  }
+  @media (max-width: 800px) {
     margin-top: 30%;
-  }@media (max-width: 564px) {
-    margin-top: 40%;
+  }
+  @media (max-width: 564px) {
+    margin-top: 48%;
+  }
+  @media (max-width: 300px) {
+    margin-top: 60%;
   }
 }
 
 .submit-login {
-  padding: 10px;
-  font-size: 12px;
+  width: 200px;
+  height: px;
   border: none;
-  border-radius: 4px 4px 4px 4px;
-  cursor: pointer;
   outline: none;
-  background: darkgoldenrod;
-  color: white;
-  text-transform: capitalize;
-  margin: auto;
-  width: 100px;
+  border-radius: 49px;
+  cursor: pointer;
+  background-color: darkgoldenrod;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 15px;
+  padding: 15px;
+}
+
+.submit-login:hover {
+  background-color: darkkhaki;
 }
 
 .body-login {
@@ -41,11 +53,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5%;
+  align-content: center;
+  align-items: center;
 }
 
 .redirect-login > a {
   text-decoration: none;
+  color: black;
 }
 
 .redirect-login > a:hover {
@@ -53,14 +67,32 @@
   color: darkgoldenrod;
 }
 
-.register_link{
+.register_link {
   display: flex;
   justify-content: center;
   color: black;
 }
 
-.login_text{
+.login_text {
   color: gray;
   font-size: x-small;
   margin: 30px;
+}
+
+.login_input {
+  width: 60%;
+  margin: 10px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}
+
+.login_input::placeholder {
+  color: darkgoldenrod;
+}
+
+.required {
+  font-size: x-small;
+  text-align: center;
+  margin: 5px;
 }

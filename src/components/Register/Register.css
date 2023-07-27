@@ -1,54 +1,75 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.planilla-register{
- text-align: center;
- min-width: 43vw;
-  height: 37vh;
-  margin: 1% 18%;
-  padding: 1em;
-  border-radius: 55px;
-  background: #cdc2c2;
+.plantilla-register {
+  margin: 10% 20%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  @media (max-width: 800px) {
+    margin-top: 30%;
+  }
+  @media (max-width: 564px) {
+    margin-top: 60%;
+  }
+  @media (max-width: 350px) {
+    margin-top: 60%;
+  }
+}
+.register_form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 60%;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
-.submit{
-    display: flex;
-    padding: 10px;
-    font-size: 12px;
-    border: none;
-    border-radius: 4px 4px 4px 4px;
-    cursor: pointer;
-    outline: none;
-    background: darkgoldenrod;
-    color: white;
-    text-transform: capitalize;
-    margin: auto;
+.register_input {
+  margin: 10px 0;
+  width: 100%;
 }
 
-.plantilla-register{
-    margin: 10% 20%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    @media (max-width: 668px) {
-        margin-top: 30%;
-      }@media (max-width: 564px) {
-        margin-top: 40%;
-      }
+.register_input::placeholder {
+  color: darkgoldenrod;
 }
 
-.register_input{
-    margin: 10px 0px;
-    width: 100%;
+.register_title {
+  text-align: center;
+  padding-bottom: 50px;
 }
 
-.register_input::placeholder{
-    color: darkgoldenrod;
+.register_terms {
+  color: darkgoldenrod;
+  font-size: small;
 }
 
-.register_title{
-    text-align: center;
-    padding-bottom: 50px;
+.register_button {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  width: 200px;
+  height: px;
+  border: none;
+  outline: none;
+  border-radius: 49px;
+  cursor: pointer;
+  background-color: darkgoldenrod;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 15px;
+  padding: 15px;
+}
+.submit:hover {
+  background-color: darkkhaki;
+}
+
+.terms_label {
+  width: 80%;
 }

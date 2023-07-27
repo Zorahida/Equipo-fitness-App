@@ -59,10 +59,8 @@ function About(args) {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
-        <CarouselCaption className="caption"
-          captionHeader={item.caption}
-        />
+        <img className="carousel_img" src={item.src} alt={item.altText} />
+        <CarouselCaption className="caption" captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -86,22 +84,45 @@ function About(args) {
           vida.
         </p>
         <p>
-        <strong>Variedad de opciones:</strong> Ofrecemos una amplia variedad de programas y clases para adaptarse a diferentes intereses y necesidades. Desde entrenamiento de fuerza y ​​acondicionamiento cardiovascular hasta clases de yoga, pilates y spinning, siempre encontrarás algo que te motive y desafíe.
+          <strong>Variedad de opciones:</strong> Ofrecemos una amplia variedad
+          de programas y clases para adaptarse a diferentes intereses y
+          necesidades. Desde entrenamiento de fuerza y ​​acondicionamiento
+          cardiovascular hasta clases de yoga, pilates y spinning, siempre
+          encontrarás algo que te motive y desafíe.
         </p>
         <p>
-        <strong>Entrenadores expertos:</strong> Nuestro equipo de entrenadores está altamente capacitado y experimentado en diferentes disciplinas de acondicionamiento físico. Te proporcionarán la orientación personalizada que necesitas para alcanzar tus objetivos de manera segura y efectiva.
+          <strong>Entrenadores expertos:</strong> Nuestro equipo de entrenadores
+          está altamente capacitado y experimentado en diferentes disciplinas de
+          acondicionamiento físico. Te proporcionarán la orientación
+          personalizada que necesitas para alcanzar tus objetivos de manera
+          segura y efectiva.
         </p>
         <p>
-        <strong>Tecnología avanzada:</strong> Utilizamos tecnología de última generación para seguir tu progreso y optimizar tu entrenamiento. Nuestros equipos y aplicaciones te ayudarán a monitorear tus avances y a mantenerte motivado durante todo el camino.
+          <strong>Tecnología avanzada:</strong> Utilizamos tecnología de última
+          generación para seguir tu progreso y optimizar tu entrenamiento.
+          Nuestros equipos y aplicaciones te ayudarán a monitorear tus avances y
+          a mantenerte motivado durante todo el camino.
         </p>
         <p>
-        <strong>Comunidad acogedora:</strong> En UpgradeFit Gym, valoramos la importancia de la comunidad. Aquí te rodearás de personas con ideas afines que te apoyarán y te animarán a alcanzar tus metas juntos. Además, organizamos eventos y actividades para fomentar la interacción y la amistad entre nuestros miembros.
+          <strong>Comunidad acogedora:</strong> En UpgradeFit Gym, valoramos la
+          importancia de la comunidad. Aquí te rodearás de personas con ideas
+          afines que te apoyarán y te animarán a alcanzar tus metas juntos.
+          Además, organizamos eventos y actividades para fomentar la interacción
+          y la amistad entre nuestros miembros.
         </p>
         <p>
-        <strong>Enfoque en el bienestar integral: </strong>Creemos que el bienestar va más allá del ejercicio físico. Por eso, ofrecemos servicios complementarios como asesoramiento nutricional, clases de meditación y talleres de bienestar emocional para ayudarte a encontrar el equilibrio entre cuerpo y mente.
+          <strong>Enfoque en el bienestar integral: </strong>Creemos que el
+          bienestar va más allá del ejercicio físico. Por eso, ofrecemos
+          servicios complementarios como asesoramiento nutricional, clases de
+          meditación y talleres de bienestar emocional para ayudarte a encontrar
+          el equilibrio entre cuerpo y mente.
         </p>
         <p>
-        No importa si eres un principiante o un atleta experimentado, UpgradeFit Gym tiene todo lo que necesitas para llevar tu acondicionamiento físico al siguiente nivel y convertirlo en un estilo de vida. Únete a nosotros y comienza tu viaje hacia una versión más fuerte, saludable y feliz de ti mismo.
+          No importa si eres un principiante o un atleta experimentado,
+          UpgradeFit Gym tiene todo lo que necesitas para llevar tu
+          acondicionamiento físico al siguiente nivel y convertirlo en un estilo
+          de vida. Únete a nosotros y comienza tu viaje hacia una versión más
+          fuerte, saludable y feliz de ti mismo.
         </p>
         <p>Recuerda, en UpgradeFit Gym, ¡tu bienestar es nuestra prioridad!</p>
       </div>

@@ -7,7 +7,7 @@ const AuthRoute = ({ user, component }) => {
   //si el usuario existe, le lleva al componente autorizado
   if (!user)
     return <Navigate to="/login" state={{ prevRoute: location.pathname }} />;
-    //sino, al login
+  //sino, al login
 };
 
 export default AuthRoute;

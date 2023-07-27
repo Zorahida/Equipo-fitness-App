@@ -1,26 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-*{
-    font-family: "Montserrat";
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;
+* {
+  font-family: "Montserrat";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    margin-top: 40px;
-    padding: 0px;
-    overflow-x: hidden;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  margin-top: 40px;
+  padding: 0px;
 }
 
-body{
-    min-height: 100vh;
+body {
+  min-height: 100vh;
 }
-
-html {
-    overflow-x: initial !important;
-  }

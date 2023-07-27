@@ -1,4 +1,4 @@
-import './nav.css'
+import "./nav.css";
 import { Link } from "react-router-dom";
 
 const logo = require("../../assets/images/logoOficial.png");
@@ -8,32 +8,36 @@ const NavBar = ({ user, logoutUser }) => {
     <nav>
       <div className="container-nav">
         <ul className="menu_nav">
-        <img className="logo" src={logo} alt="logo"></img>
-          <li className='list-nav'>
+          <img className="logo" src={logo} alt="logo"></img>
+          <li className="list-nav">
             <Link to="/">Inicio</Link>
           </li>
-          <li className='list-nav'>
+          <li className="list-nav">
             <Link to="/training">Listado de entrenamientos</Link>
           </li>
-          <li className='list-nav'>
+          <li className="list-nav">
             <Link to="/register">Registro</Link>
           </li>
-          <li className='list-nav'>
+          <li className="list-nav">
             <Link to="/profile">Área personal</Link>
           </li>
-          <li className='list-nav'>
+          <li className="list-nav">
             <Link to="/contact">Contacto</Link>
           </li>
-          <li className='list-nav'>
+          <li className="list-nav">
             <Link to="/about">Acerca de nosotros</Link>
           </li>
-          <li className='list-nav'>
-          {user ? (
-            <button className="button-nav" onClick={logoutUser}>Cerrar sesión</button>
-          ) : (
-            <Link to="/login">Iniciar sesión</Link>
-          )}
-        </li>
+          <li className="list-nav-login">
+            {user ? (
+              <button className="button-nav" onClick={logoutUser}>
+                Cerrar sesión
+              </button>
+            ) : (
+              <Link className="login" to="/login">
+                Iniciar sesión
+              </Link>
+            )}
+          </li>
         </ul>
       </div>
     </nav>

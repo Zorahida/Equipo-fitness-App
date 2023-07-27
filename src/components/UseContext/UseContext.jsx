@@ -1,6 +1,5 @@
-import {createContext} from "react";
+import { createContext } from "react";
 
-export const contextUse = createContext({})
+export const contextUse = createContext({});
 
 export const color = createContext();
-

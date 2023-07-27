@@ -53,7 +53,7 @@ function App() {
           setUser(data.userInfo);
           setLoginError("");
           navigate(prevRoute || "/profile");
-        }else {
+        } else {
           setUser(false);
           setLoginError(data.message);
           navigate("/login");
@@ -77,36 +77,43 @@ function App() {
         />
         <div className={theme ? "light" : "dark"}>
           <color.Provider value={theme}> */}
-            {/* <>
+        {/* <>
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"/>*/}
-        <NavBar user={user} logoutUser={logoutUser}/>
+        <NavBar user={user} logoutUser={logoutUser} />
         <contextUse.Provider value={user}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/training" element={<TrainingList trainings={trainings}/>} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login loginUser={loginUser} loginError={loginError}/>} />
-          <Route
-                  path="/profile"
-                  element={
-                    <AuthRoute
-                      user={user}
-                      component={<PersonalArea user={user} />}
-                    />
-                  }
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/training"
+              element={<TrainingList trainings={trainings} />}
+            />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/login"
+              element={<Login loginUser={loginUser} loginError={loginError} />}
+            />
+            <Route
+              path="/profile"
+              element={
+                <AuthRoute
+                  user={user}
+                  component={<PersonalArea user={user} />}
                 />
-          <Route path="/userList" element={<UserList />} />
-          <Route path="/UserModify/:usuario.Id" element={< UserModify/>} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/terminosycondiciones" element={<Terminos />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+              }
+            />
+            <Route path="/userList" element={<UserList />} />
+            <Route path="/UserModify/:usuario.Id" element={<UserModify />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/terminosycondiciones" element={<Terminos />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </contextUse.Provider>
-        <Footer/>
-        </div>
-        </>
-)}
+        <Footer />
+      </div>
+    </>
+  );
+}
 
 export default App;
