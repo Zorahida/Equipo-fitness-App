@@ -96,15 +96,14 @@ function Contact ()  {
     return (
 
       <>
-        <div className="Title">
-          <h1>CONTACTA CON NOSOTROS</h1>
-        </div>
+        <h1 className="contact_title">Contáctanos</h1>
         <form className="form" ref={form} onSubmit={submitForm}>
         <div className="main-container">
           <div className="container-details">
             <label>
-              Nombre:{" "}
-              <input
+              {/* Nombre:{" "} */}
+              </label>
+              <input className="input"
                 type="text"
                 name="nombre"
                 value={name}
@@ -115,8 +114,8 @@ function Contact ()  {
                 {name !== "" && !patterns.name.test(name) && (
               <span style={{ color: "red" }}>{messages.name}</span>)}
               
-              Apellidos:{" "}
-              <input
+              <label>{/* Apellidos:{" "} */}</label>
+              <input className="input"
                 type="text"
                 name="surname"
                 value={surname}
@@ -128,8 +127,8 @@ function Contact ()  {
               <span style={{ color: "red" }}>{messages.name}</span>
             )}
 
-              Email:{" "}
-              <input
+            <label>{/* Email:{" "} */}</label>
+              <input className="input"
                 type="email"
                 name="email"
                 value={email}
@@ -141,8 +140,8 @@ function Contact ()  {
               <span style={{ color: "red" }}>{messages.email}</span>
             )}
 
-              Teléfono:{" "}
-              <input
+              <label>{/* Teléfono:{" "} */}</label>
+              <input className="input"
                 type="tel"
                 name="Teléfono"
                 value={phone}
@@ -153,15 +152,25 @@ function Contact ()  {
               {phone !== "" && !patterns.phone.test(phone) && (
               <span style={{ color: "red" }}>{messages.phone}</span>
             )}
-            </label>
-            <label>Escriba su mensaje</label>
-      <textarea maxLength="300" name="message" />
+            <label>{/* Escriba su mensaje*/}</label>
+            <textarea
+            className="textarea"
+              name="mensaje"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows="10"
+              cols="40"
+              placeholder="Escriba aquí su mensaje"
+              required
+            ></textarea>
           </div>
 
           <div className="container-radios">
-            <h3>Como quiero que me contacten:</h3>
-            <label>
-              <input
+          <p className="strong_title"><strong>Como quiero que me contacten:</strong></p>
+          <div className="div_radio">
+            <label>Vía telefónica
+            </label>
+              <input className=
                 type="radio"
                 name="btnRadio"
                 value="teléfono"
@@ -169,10 +178,11 @@ function Contact ()  {
                 onChange={() => setContactMethod("teléfono")}
                 required
               />
-             Vía telefónica
+             </div>
+             <div className="div_radio">
+            <label>Vía correo electrónico
             </label>
-            <label>
-              <input
+              <input className=
                 type="radio"
                 name="btnRadio"
                 value="email"
@@ -180,10 +190,11 @@ function Contact ()  {
                 onChange={() => setContactMethod("email")}
                 required
               />
-              Vía correo electrónico
+              </div>
+              <div className="div_radio">
+            <label>No es necesario que me contacten
             </label>
-            <label>
-              <input
+              <input className=
                 type="radio"
                 name="btnRadio"
                 value="none"
@@ -191,27 +202,26 @@ function Contact ()  {
                 onChange={() => setContactMethod("none")}
                 required
               />
-              No es necesario que me contacten
-            </label>
+              </div>
           </div>
 
           <div className="container-terms">
             <label>
-            <a href="https://www.upgrade-hub.com/privacidad/">Acepto los términos y condiciones{""}</a> 
+            <a className="contact_terms" href="https://www.upgrade-hub.com/privacidad/">Acepto los términos y condiciones{""}</a></label>
 
               <input
+              className="input_radio"
                 type="checkbox"
                 name="terminosCheckbox"
                 checked={termsAccepted}
                 onChange={() => setTermsAccepted(!termsAccepted)}
                 required
               />
-            </label>
           </div>
 
-          <div>
+          <div className="div_button">
             <button
-              className="btn"
+              className="button"
               type="submit"
               disabled={!termsAccepted}
               onClick={(ev) => {setMessage(""); submitForm(ev);}}>

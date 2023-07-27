@@ -54,7 +54,6 @@ const Register = () => {
         }
       })}/>
       {errors.Contraseña && <p>{errors.Contraseña.message}</p>}
-      <button className='submit'>Registrar</button>
 
       <div className="container-terms">
             <label>
