@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Equipo-Fitness-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Equipo-Fitness-App es una aplicación desarrollada por nuestro equipo con el objetivo de proporcionar un control personalizado de medidas y recomendaciones de ejercicios diarios. Nuestra aplicación se enfoca en brindar una experiencia única para cada usuario, ofreciendo servicios personalizados y un compromiso total con nuestros clientes.
+Características
 
-In the project directory, you can run:
+    Control personal de medidas y progreso de entrenamientos.
+    Recomendaciones de ejercicios diarios basados en las medidas del usuario.
+    Página "Acerca de nosotros" que presenta información sobre nuestra empresa ficcional, servicios y compromiso con los clientes.
+    Componente de administración (Admin) que protege las rutas según el tipo de usuario y una ruta de autorización (AuthRoute).
+    Página de contacto que permite a los usuarios enviar mensajes mediante la librería emailJs.
+    Barra de navegación (Nav) con enlaces a las diferentes secciones de la aplicación.
+    Pie de página (Footer) con enlaces a las secciones de la aplicación, iconos de redes sociales y nombres de los creadores.
+    Página de inicio (Home) que muestra testimonios y comunicados de nuestros servicios.
+    Página de inicio de sesión (Login) para autenticar usuarios con credenciales registradas en la base de datos.
+    Página "No encontrada" (NotFound) para manejar rutas incorrectas.
+    Área personal (PersonalArea) que muestra los datos del usuario registrados en la base de datos (ruta protegida por autenticación).
+    Página de "Términos y Condiciones" que describe las condiciones de uso de la aplicación.
+    Lista de entrenamientos (TrainingList) que muestra una lista de posibles entrenamientos con videos de demostración.
+    Componente UseContext para proporcionar un botón de modo oscuro en todas las rutas.
+    Página de lista de usuarios (UserList) para obtener y borrar usuarios de la base de datos (ruta solo accesible por un admin).
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    React
+    Axios
+    EmailJs
+    Toogle 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
 
-### `npm test`
+    Clona este repositorio.
+    Ejecuta npm install para instalar las dependencias.
+    Ejecuta npm start para iniciar la aplicación en modo de desarrollo.
+    Abre http://localhost:3000 en tu navegador para ver la aplicación.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Uso
 
-### `npm run build`
+### Página de Inicio
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Al abrir la aplicación, serás redirigido a la página de inicio (Home).
+    En la página de inicio, encontrarás "testimonios" de diferentes usuarios que han utilizado nuestra aplicación y han experimentado resultados positivos.
+    También verás comunicados sobre los servicios que ofrecemos, como soporte a nivel personalizado y entrenamientos personalizados.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Acerca de Nosotros
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Navega a la página "Acerca de nosotros" (About) para conocer más acerca de nuestra empresa ficticia y los servicios que proporcionamos a nuestros clientes.
+    Obtén información sobre nuestro compromiso con la salud y el bienestar de nuestros usuarios.
 
-### `npm run eject`
+### Iniciar Sesión
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Si ya eres usuario registrado, ve a la página de inicio de sesión (Login).
+    Ingresa tus credenciales para autenticarte y acceder a tu área personalizada.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Área Personal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Una vez que hayas iniciado sesión, serás redirigido a tu área personal (PersonalArea).
+    Aquí podrás ver los datos que están registrados en la base de datos y corresponden a tu perfil de usuario.
+    Esta área está protegida y solo puede ser accesible para usuarios autorizados.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Lista de Entrenamientos
 
-## Learn More
+    Explora la sección de la "Lista de entrenamientos" (TrainingList) para encontrar una variedad de posibles rutinas de entrenamiento.
+    Cada entrenamiento incluirá detalles sobre cómo llevar a cabo las rutinas y videos de demostración para seguir los ejercicios correctamente.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Modo Oscuro
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Nuestra aplicación cuenta con un botón de "Modo Oscuro" proporcionado por el componente UseContext.
+    Al hacer clic en este botón, podrás cambiar el estilo de la página a un tono más oscuro para una mejor experiencia visual.
 
-### Code Splitting
+### Contacto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Utiliza la página de contacto (Contacto) para enviarnos mensajes o consultas.
+    Al enviar un mensaje, utilizamos la librería emailJs para asegurarnos de que llegue a nuestro correo designado.
 
-### Analyzing the Bundle Size
+### Términos y Condiciones
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Si deseas obtener más información sobre los términos y condiciones de uso de la aplicación, visita la página dedicada a este tema (Terminos y Condiciones).
 
-### Making a Progressive Web App
+### Administración y CRUD
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    La aplicación cuenta con un componente de administración (Admin) que controla el acceso a ciertas rutas según el tipo de usuario.
+    Además, implementamos rutas de autenticación y login para proporcionar una experiencia segura y protegida para nuestros usuarios.
 
-### Advanced Configuration
+### Lista de Usuarios (Acceso restringido)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    La página "Lista de Usuarios" (UserList) solo es accesible para usuarios administradores.
+    Aquí, los administradores pueden obtener y eliminar usuarios de la base de datos según sea necesario.
 
-### Deployment
+## Contribución
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Este proyecto está destinado a ser una muestra para un trabajo de clase, por lo que no aceptamos contribuciones externas en este momento.
 
-### `npm run build` fails to minify
+## Créditos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Agradecimientos especiales a los creadores de las siguientes tecnologías y librerías utilizadas en el proyecto:
+
+    React: https://reactjs.org/
+    Axios: https://axios-http.com/
+    EmailJs: https://www.emailjs.com/
+    Toogle (o el nombre correcto de la librería): URL del repositorio o sitio web
+
+## Licencia
+
+Este proyecto no tiene una licencia específica, ya que es una muestra para un trabajo de clase.
