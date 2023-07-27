@@ -1,11 +1,14 @@
 import './nav.css'
 import { Link } from "react-router-dom";
 
+const logo = require("../../assets/images/logoOficial.png");
+
 const NavBar = ({ user, logoutUser }) => {
   return (
     <nav>
       <div className="container-nav">
-        <ul className="menu-nav">
+        <ul className="menu_nav">
+        <img className="logo" src={logo} alt="logo"></img>
           <li className='list-nav'>
             <Link to="/">Inicio</Link>
           </li>
